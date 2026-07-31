@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高中物理必修一：运动与力系统教程</title>
+<style>
+:root{--bg:#f7f4ee;--panel:#fffdf8;--text:#27231f;--muted:#6f675f;--accent:#8b3f32;--border:#d8d0c5;--green:#365d4b;--amber:#7a5317;--danger:#8e302a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.72 "Avenir Next","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif}
+button,input{font:inherit}button{color:inherit}svg{max-width:100%;height:auto}
+.topbar{position:sticky;top:0;z-index:40;height:58px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 20px;background:var(--panel);border-bottom:1px solid var(--border)}
+.brand{min-width:0;display:flex;align-items:baseline;gap:12px}.brand strong{font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand span{color:var(--muted);font-size:13px}
+.actions{display:flex;gap:8px}.btn{border:1px solid var(--border);background:var(--panel);padding:7px 10px;border-radius:8px;cursor:pointer}.btn:hover{background:#f1ece4}.btn:focus-visible,.search input:focus-visible{outline:3px solid rgba(139,63,50,.2);outline-offset:1px}
+.layout{display:grid;grid-template-columns:256px minmax(0,1fr);min-height:calc(100vh - 58px)}.layout.no-sidebar{grid-template-columns:1fr}
+.sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow:auto;padding:20px 14px;background:#f1ede6;border-right:1px solid var(--border)}.sidebar.hidden{display:none}
+.search label{display:block;margin:0 0 7px;color:var(--muted);font-size:13px}.search-row{display:flex;gap:6px}.search input{min-width:0;width:100%;padding:8px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px}.search button{width:38px;border:1px solid var(--border);border-radius:8px;background:var(--panel);cursor:pointer}
+.toc h2{margin:22px 6px 8px;font-size:14px}.toc ul{list-style:none;margin:0;padding:0}.toc li{margin:2px 0}.toc li.hidden{display:none}.toc a{display:block;padding:8px 9px;border-left:3px solid transparent;text-decoration:none;color:#544d46;font-size:14px}.toc a:hover{background:#e8e2d8}.toc a.active{background:#e7ddd2;border-left-color:var(--accent);color:var(--accent);font-weight:650}
+.sidebar-note{margin:18px 6px 0;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+.main{min-width:0;padding:34px 38px 70px}.wrap{max-width:1000px;margin:0 auto}.intro{padding:0 0 26px;border-bottom:1px solid var(--border);margin-bottom:22px}
+h1{margin:0 0 10px;font-size:clamp(28px,4vw,44px);line-height:1.2;letter-spacing:-.02em}.lede{max-width:780px;margin:0;color:#554e47;font-size:17px}.source-note{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--green);background:#e7eee9;color:#344b40;font-size:14px}
+.map{margin-top:22px;border-collapse:collapse;width:100%;background:var(--panel);font-size:14px}.map th,.map td{padding:9px 10px;border:1px solid var(--border);text-align:left;vertical-align:top}.map th{background:#eee9e1}
+details.section{margin:14px 0;background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden}details.section[open]{border-color:#bdb3a7}
+details.section>summary{display:flex;align-items:center;gap:12px;padding:15px 17px;cursor:pointer;list-style:none}details.section>summary::-webkit-details-marker{display:none}details.section>summary::after{content:"＋";margin-left:auto;color:var(--muted);font-size:18px}details.section[open]>summary::after{content:"−"}
+.unit{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--accent);border-radius:7px;color:var(--accent);font-weight:750;font-size:14px}.sum-title{font-weight:700}.sum-subtitle{display:block;color:var(--muted);font-size:13px}
+.section-body{padding:2px 20px 24px;border-top:1px solid var(--border)}.section-body h2{margin:25px 0 10px;font-size:22px}.section-body h3{margin:22px 0 8px;font-size:18px}.section-body p{margin:8px 0}.section-body ul,.section-body ol{margin:8px 0;padding-left:24px}.section-body li+li{margin-top:5px}
+.lesson-tag{display:inline-block;margin-right:8px;padding:1px 7px;border:1px solid #c9b3a9;border-radius:6px;color:var(--accent);font-size:12px;vertical-align:2px}
+.box{margin:13px 0;padding:12px 14px;border:1px solid var(--border);border-left-width:4px;border-radius:8px;background:#fbf9f4}.boxtitle{margin-bottom:5px;font-weight:700}
+.definition{border-left-color:var(--green);background:#e7eee9}.equation{border-left-color:var(--accent);background:#f3e6df}.derivation{border-left-color:#5d4a77;background:#eee9f3}.example{border-left-color:var(--amber);background:#f6edda}.trap{border-left-color:var(--danger);background:#f7e5e1}.checklist{border-left-color:#315a69;background:#e7eff1}
+pre[data-copy]{margin:9px 0 2px;padding:11px 12px;overflow:auto;white-space:pre-wrap;word-break:break-word;background:#f0ece4;border:1px dashed #b9afa3;border-radius:7px;font:14px/1.65 "SFMono-Regular",Consolas,monospace;cursor:copy}
+.formula-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.formula-grid .box{margin:0}.two-col{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);gap:18px;align-items:start}
+.diagram{margin:14px 0;padding:10px;border:1px solid var(--border);background:#fff}.diagram figcaption{margin-top:7px;color:var(--muted);font-size:13px;text-align:center}
+.steps{counter-reset:step;list-style:none!important;padding:0!important}.steps li{position:relative;padding:5px 0 8px 38px}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:4px;display:grid;place-items:center;width:25px;height:25px;border:1px solid #9f9285;border-radius:50%;font-size:12px;font-weight:700}
+.quiz{margin:14px 0;border-top:1px solid var(--border)}.quiz details{padding:11px 0;border-bottom:1px solid var(--border)}.quiz summary{cursor:pointer;font-weight:650}.answer{margin:8px 0 0;padding:9px 11px;background:#efebe4}
+.hl{background:#f4df9c!important;color:#332912!important}.copy-toast{position:fixed;right:18px;bottom:18px;padding:9px 12px;background:#2e2925;color:#fff;border-radius:7px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .16s;z-index:60}.copy-toast.show{opacity:1}.print-hint{color:var(--muted);font-size:13px}
+@media(max-width:860px){.topbar{padding:0 8px}.brand{display:none}.actions{width:100%;justify-content:space-between}.btn{padding:7px 9px}.layout,.layout.no-sidebar{display:block}.sidebar{position:fixed;left:0;top:58px;z-index:35;width:min(86vw,300px);box-shadow:2px 0 8px rgba(0,0,0,.1)}.main{padding:24px 16px 55px}.two-col,.formula-grid{grid-template-columns:1fr}.wide-label{display:none}.map{font-size:12px}}
+@media print{.topbar,.sidebar,.copy-toast{display:none!important}.layout{display:block}.main{padding:0}.wrap{max-width:none}details.section{break-inside:avoid;border-radius:0}details.section:not([open])>.section-body{display:block}.box,.diagram{break-inside:avoid}}
+</style>
+
+<!--
+====================================================
+PART A — CANONICAL TUTORIAL (MARKDOWN)
+====================================================
+
+# 高中物理必修一：运动与力系统教程
+
+## A. 建模与运动学语言（第1讲）
+从研究对象、参考系、正方向和时间原点开始；区分路程与位移、时刻与时间、平均速度与瞬时速度；加速度描述速度的变化率。所有一维题先建立有正方向的坐标轴。
+
+## B. 图像与匀变速直线运动（第2—3讲）
+x-t 图像斜率表示速度，v-t 图像斜率表示加速度、代数面积表示位移。由加速度定义、平均速度和图像面积推出四个基本公式；它们只适用于加速度恒定的一维阶段。
+
+## C. 两种特殊运动与比例规律（第4讲）
+自由落体是 v0=0、a=g 的匀加速运动；竖直上抛在取向上为正时 a=-g。掌握中间时刻速度、中点位置速度和初速度为零时的比例规律。
+
+## D. 追及与相遇（第5讲）
+在同一参考系写位置函数，以 xA=xB 或间距为零作为相遇条件；临界“恰好不相撞”还需相对速度为零。所得时间必须落在所列方程对应的运动阶段。
+
+## E. 力学基础与矢量运算（第6—7讲）
+重力、弹力、摩擦力按产生条件判断；静摩擦不是固定等于 μN。合力与分力是等效替代关系。正交分解时优先沿运动方向或接触面建轴。
+
+## F. 共点力平衡与整体—隔离法（第8—9讲）
+静止或匀速直线运动时加速度为零，故合力为零。多个物体先整体求外力或加速度，再隔离求内部作用力；动态平衡可用力的矢量三角形分析。
+
+## G. 牛顿运动定律及应用（第10—12讲）
+牛顿第二定律是矢量式 ΣF=ma。连接体要同时使用受力方程与约束；超重、失重取决于加速度方向，重力不变。临界常表现为 N=0、T=0 或静摩擦达到最大值。
+
+## H. 传送带、滑块与期末复习（第13—14讲）
+传送带题先由相对运动判断摩擦方向，再算达到共速或到达端点的先后；共速后重新判断。综合题按“对象—过程—受力—规律—检验”闭环处理。
+-->
+
+<script type="application/json" id="studyPageStructure">
+{
+  "title":"高中物理必修一：运动与力系统教程",
+  "subject":"physics",
+  "language":"zh-CN",
+  "reference":"普通高中教科书《物理 必修 第一册》（人民教育出版社）",
+  "sections":[
+    {"id":"unit-a","label":"A","title":"建模与运动学语言","lessons":[1]},
+    {"id":"unit-b","label":"B","title":"图像与匀变速直线运动","lessons":[2,3]},
+    {"id":"unit-c","label":"C","title":"两种特殊运动与比例规律","lessons":[4]},
+    {"id":"unit-d","label":"D","title":"追及与相遇","lessons":[5]},
+    {"id":"unit-e","label":"E","title":"力学基础与矢量运算","lessons":[6,7]},
+    {"id":"unit-f","label":"F","title":"共点力平衡与整体—隔离法","lessons":[8,9]},
+    {"id":"unit-g","label":"G","title":"牛顿运动定律及应用","lessons":[10,11,12]},
+    {"id":"unit-h","label":"H","title":"传送带、滑块与期末复习","lessons":[13,14]}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><strong>高中物理必修一</strong><span>从运动描述到牛顿定律的完整知识链</span></div>
+  <div class="actions">
+    <button class="btn" id="btnToggleSidebar" type="button"><span class="wide-label">显示/隐藏</span>目录</button>
+    <button class="btn" id="btnExpandAll" type="button">全部展开</button>
+    <button class="btn" id="btnCollapseAll" type="button">全部折叠</button>
+    <button class="btn" id="btnPrint" type="button">打印</button>
+  </div>
+</header>
+<div class="layout" id="layout">
+<aside class="sidebar" id="sidebar" aria-label="目录">
+  <div class="search"><label for="q">搜索章节与小标题</label><div class="search-row"><input id="q" type="search" placeholder="如：摩擦力、追及、超重"><button id="btnClear" type="button" aria-label="清除搜索">×</button></div></div>
+  <nav class="toc" aria-label="教程目录"><h2>八个学习单元</h2><ul>
+    <li data-toc-item><a data-toc-link href="#unit-a">A　运动学语言</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-b">B　图像与匀变速</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-c">C　特殊直线运动</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-d">D　追及与相遇</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-e">E　力与矢量</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-f">F　平衡与研究对象</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-g">G　牛顿定律综合</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-h">H　传送带与复习</a></li>
+  </ul></nav>
+  <div class="sidebar-note">双击公式框可复制。搜索会筛选目录并高亮匹配的小标题。</div>
+</aside>
+
+<main class="main"><div class="wrap">
+<section class="intro">
+  <h1>运动与力：一条贯通的解题主线</h1>
+  <p class="lede">先用运动学描述“怎样运动”，再用受力分析解释“为什么这样运动”。本教程按照照片中的 14 讲重组为 8 个单元，适合新课学习、章节复习与考前查漏。</p>
+  <p class="source-note"><strong>参考说明：</strong>知识顺序和术语以人教版《普通高中教科书 物理 必修 第一册》第一至第四章为基准；追及、竖直上抛、连接体、临界与传送带是对应基础规律的常见题型拓展。</p>
+  <table class="map"><thead><tr><th>照片中的讲次</th><th>本教程</th><th>核心内容</th></tr></thead><tbody>
+    <tr><td>1—5　运动学</td><td>A—D</td><td>模型、图像、公式、特殊运动、追及相遇</td></tr>
+    <tr><td>6—9　力与平衡</td><td>E—F</td><td>受力、合成分解、平衡、整体与隔离</td></tr>
+    <tr><td>10—13　牛顿定律综合</td><td>G—H</td><td>动力学、连接体、临界、超失重、传送带</td></tr>
+    <tr><td>14　期末复习</td><td>H</td><td>统一流程、自测题与考场检查清单</td></tr>
+  </tbody></table>
+</section>
+
+<details class="section" id="unit-a" data-title="建模 运动学 基本概念 质点 参考系 位移 速度 加速度" open>
+<summary><span class="unit">A</span><span><span class="sum-title">建模与运动学语言</span><span class="sum-subtitle">第1讲 · 先把对象、方向与变量说清楚</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第1讲</span>运动学的基本概念</h2>
+<div class="box definition"><div class="boxtitle">定义与适用条件</div><ul>
+<li><strong>质点：</strong>当物体大小和形状对问题影响可忽略时，用有质量的点代替。它是模型，不是“小物体”的同义词。</li>
+<li><strong>参考系：</strong>描述位置和运动时选作参照的物体；说“运动”或“静止”必须带参考系。</li>
+<li><strong>位移 Δx：</strong>位置变化量 Δx=x₂−x₁，有正负；<strong>路程 s</strong> 是轨迹长度。只有单向直线运动时 |Δx|=s。</li>
+<li><strong>速度：</strong>位置变化的快慢与方向；<strong>加速度：</strong>速度变化的快慢与方向。</li>
+</ul></div>
+<div class="formula-grid">
+<div class="box equation"><div class="boxtitle">平均量</div><pre data-copy>平均速度：v̄ = Δx / Δt
+平均速率：路程 / 时间</pre></div>
+<div class="box equation"><div class="boxtitle">变化率</div><pre data-copy>加速度：a = Δv / Δt = (v₂ - v₁) / Δt</pre></div>
+</div>
+<h3>建模四问</h3><ol class="steps">
+<li><strong>研究谁？</strong>单个物体、系统整体，还是某个接触点？</li>
+<li><strong>相对谁？</strong>通常选地面；传送带题还要比较物块相对带面的运动。</li>
+<li><strong>正方向是什么？</strong>先规定，再让速度、位移、加速度和力带符号。</li>
+<li><strong>在哪个过程？</strong>刹车至停止、绳绷紧前后、共速前后往往要分段。</li>
+</ol>
+<div class="box example"><div class="boxtitle">例1｜位移与平均速度</div><p>小车从 x=−2 m 运动到 x=10 m，再返回 x=4 m，总用时 4 s。总位移为 6 m，路程为 18 m，平均速度为 1.5 m/s，平均速率为 4.5 m/s。</p></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>“速度为负”不等于“减速”。负号只说明速度方向；判断速率增减要看 v 与 a 是否同号。</p></div>
+</div></details>
+
+<details class="section" id="unit-b" data-title="运动图像 匀变速 直线运动 速度时间 位移时间 公式 应用 刹车">
+<summary><span class="unit">B</span><span><span class="sum-title">图像与匀变速直线运动</span><span class="sum-subtitle">第2—3讲 · 斜率、面积与四个基本公式</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第2讲</span>运动图像：先认坐标轴</h2>
+<div class="two-col"><div>
+<div class="box definition"><div class="boxtitle">图像的物理意义</div><ul>
+<li>x-t 图像的<strong>斜率</strong>是速度；交点表示同一时刻处于同一位置。</li>
+<li>v-t 图像的<strong>斜率</strong>是加速度；与时间轴围成的<strong>代数面积</strong>是位移。</li>
+<li>a-t 图像的面积是速度变化量 Δv。</li>
+</ul></div>
+<p>图线不是运动轨迹。x-t 图像向下倾斜表示向负方向运动，不表示物体“沿斜坡向下”。</p>
+</div>
+<figure class="diagram"><svg viewBox="0 0 360 230" role="img" aria-label="运动图像">
+<path d="M35 95V20M35 95H160M205 95V20M205 95H330" fill="none" stroke="#4b443d" stroke-width="2"/>
+<path d="M45 82L145 35" fill="none" stroke="#8b3f32" stroke-width="4"/><text x="70" y="48" fill="#8b3f32" font-size="13">斜率 = v</text>
+<path d="M215 82L315 35" fill="none" stroke="#365d4b" stroke-width="4"/><path d="M215 95V82L315 35V95Z" fill="#e7eee9"/><text x="235" y="48" fill="#365d4b" font-size="13">斜率 = a</text><text x="235" y="80" fill="#365d4b" font-size="13">面积 = Δx</text>
+<text x="20" y="26">x</text><text x="150" y="112">t</text><text x="190" y="26">v</text><text x="320" y="112">t</text>
+<path d="M35 205V130M35 205H330" fill="none" stroke="#4b443d" stroke-width="2"/><path d="M45 190H140L205 150H315" fill="none" stroke="#8b3f32" stroke-width="4"/><text x="57" y="181" fill="#8b3f32" font-size="12">匀速</text><text x="148" y="163" fill="#8b3f32" font-size="12">匀加速</text><text x="237" y="143" fill="#8b3f32" font-size="12">再次匀速</text>
+</svg><figcaption>读图顺序：纵轴是什么 → 斜率 → 面积 → 正负。</figcaption></figure></div>
+<h2><span class="lesson-tag">第3讲</span>匀变速直线运动的应用</h2>
+<div class="box derivation"><div class="boxtitle">核心公式的推导链</div><ol>
+<li>a=(v−v₀)/t，所以 v=v₀+at。</li>
+<li>v-t 图像为直线，平均速度 v̄=(v₀+v)/2，于是 x=v̄t。</li>
+<li>代入速度式，得 x=v₀t+at²/2。</li>
+<li>消去 t，得 v²−v₀²=2ax。</li>
+</ol></div>
+<div class="formula-grid">
+<div class="box equation"><div class="boxtitle">四式联用</div><pre data-copy>v = v₀ + at
+x = v₀t + ½at²
+v² - v₀² = 2ax
+x = ½(v₀ + v)t</pre></div>
+<div class="box checklist"><div class="boxtitle">选公式</div><p>缺时间用 v²−v₀²=2ax；缺末速度用 x=v₀t+½at²；图像题优先用斜率和面积。</p></div>
+</div>
+<div class="box example"><div class="boxtitle">例2｜刹车</div><p>汽车以 20 m/s 行驶，制动后 a=−5 m/s²。令 v=0，得停止时间 4 s；由 0−20²=2(−5)x，得制动距离 40 m。若问 6 s 内位移，汽车 4 s 已停，答案仍是 40 m。</p></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>四个公式只适用于同一阶段内加速度恒定的直线运动；刹车停止后必须分段。</p></div>
+</div></details>
+
+<details class="section" id="unit-c" data-title="特殊 匀变速 自由落体 竖直上抛 中间时刻 中点位置 比例">
+<summary><span class="unit">C</span><span><span class="sum-title">两种特殊直线运动与比例规律</span><span class="sum-subtitle">第4讲 · 自由落体、竖直上抛与中点公式</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第4讲</span>把特殊题还原为匀变速模型</h2>
+<div class="formula-grid">
+<div class="box definition"><div class="boxtitle">自由落体（向下为正）</div><pre data-copy>v = gt
+h = ½gt²
+v² = 2gh</pre></div>
+<div class="box definition"><div class="boxtitle">竖直上抛（向上为正）</div><pre data-copy>v = v₀ - gt
+y = v₀t - ½gt²
+最高点：v = 0，t↑ = v₀/g</pre></div>
+</div>
+<p>最高点速度为零但加速度不为零。忽略空气阻力，回到抛出点时速度大小等于 v₀、方向向下。</p>
+<h3>两个“中点速度”</h3>
+<div class="box equation"><pre data-copy>中间时刻速度：v(t/2) = (v₀ + v)/2
+中点位置速度：v(x/2) = √[(v₀² + v²)/2]</pre></div>
+<div class="box derivation"><div class="boxtitle">推导中点位置速度</div><p>在 x/2 处，vₘ²−v₀²=ax；全程 v²−v₀²=2ax。消去 ax，得 vₘ²=(v₀²+v²)/2。</p></div>
+<h3>初速度为零的比例</h3>
+<div class="box equation"><pre data-copy>t、2t、3t…时的位移比 = 1 : 4 : 9 : …
+连续等时位移比 = 1 : 3 : 5 : …
+连续等位移时间比 = 1 : (√2-1) : (√3-√2) : …</pre></div>
+<div class="box example"><div class="boxtitle">例3｜竖直上抛</div><p>v₀=20 m/s，g=10 m/s²。2 s 到最高点，最大高度 20 m；4 s 回到抛出点，速度 −20 m/s。</p></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>上升写 a=−g、下降又改成 a=+g。只要正方向没变，重力加速度的符号全过程不变。</p></div>
+</div></details>
+
+<details class="section" id="unit-d" data-title="追及 相遇 相撞 临界 相对运动 位置函数">
+<summary><span class="unit">D</span><span><span class="sum-title">追及与相遇</span><span class="sum-subtitle">第5讲 · 位置相等是核心，速度相等常是临界</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第5讲</span>把“追上”翻译成方程</h2>
+<div class="box definition"><div class="boxtitle">两个条件</div><p><strong>相遇：</strong>xA(t)=xB(t)。</p><p><strong>恰好避免碰撞：</strong>最小间距为零，且该时刻相对速度为零，即 Δx=0、Δv=0。</p></div>
+<figure class="diagram"><svg viewBox="0 0 760 200" role="img" aria-label="追及位置时间图像">
+<path d="M65 165V25M65 165H700" fill="none" stroke="#4b443d" stroke-width="2"/><text x="43" y="28">x</text><text x="700" y="186">t</text>
+<path d="M70 142L625 45" fill="none" stroke="#365d4b" stroke-width="4"/><path d="M70 70Q300 70 420 82Q530 90 625 45" fill="none" stroke="#8b3f32" stroke-width="4"/>
+<circle cx="625" cy="45" r="5"/><path d="M625 45V165" stroke="#aaa" stroke-dasharray="5 5"/><text x="110" y="128" fill="#365d4b">A：匀速追赶</text><text x="115" y="58" fill="#8b3f32">B：先慢后快</text><text x="555" y="30">交点＝相遇</text>
+</svg><figcaption>x-t 图像交点给出相遇；切点还表示速度相等。</figcaption></figure>
+<ol class="steps"><li>统一参考系、原点、正方向和计时起点。</li><li>画初始位置草图，标出初始间距。</li><li>分阶段写位置函数。</li><li>令位置相等求候选时刻，并检查阶段范围与题意。</li></ol>
+<div class="box example"><div class="boxtitle">例4｜延迟启动</div><p>A 以 10 m/s 经过某点；2 s 后 B 从该点静止出发，以 2 m/s² 追赶。以 B 启动为 t=0，A 已领先 20 m。xA=20+10t，xB=t²。令两式相等，取正根 t=5+3√5≈11.71 s，相遇位置约 137.1 m。</p></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>速度相等只说明间距取极值，不保证相遇；始终要检查位置条件。</p></div>
+</div></details>
+
+<details class="section" id="unit-e" data-title="力学基础 重力 弹力 摩擦力 牛顿第三定律 力的合成 分解 受力分析">
+<summary><span class="unit">E</span><span><span class="sum-title">力学基础与矢量运算</span><span class="sum-subtitle">第6—7讲 · 先找真实作用，再合成或分解</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第6讲</span>按产生条件找力</h2>
+<p><a class="btn" href="lesson-06-force-basics-tutorial.html">打开第6讲详细教程与20道配套习题</a></p>
+<div class="box definition"><div class="boxtitle">常见力</div><ul>
+<li><strong>重力：</strong>G=mg，竖直向下。</li>
+<li><strong>弹力：</strong>接触且形变才可能存在；支持力垂直接触面，轻绳拉力沿绳。</li>
+<li><strong>摩擦力：</strong>接触粗糙、有正压力，且有相对运动或趋势；方向与相对运动（趋势）相反。</li>
+</ul></div>
+<div class="formula-grid"><div class="box equation"><div class="boxtitle">摩擦力</div><pre data-copy>滑动摩擦：fₖ = μₖN
+静摩擦：0 ≤ fₛ ≤ fₛ,max</pre></div>
+<div class="box checklist"><div class="boxtitle">受力分析</div><p>定对象 → 重力 → 接触力 → 其他外力 → 检查每个力的施力物体。运动方向不是力。</p></div></div>
+<p><strong>牛顿第三定律：</strong>作用力与反作用力等大、反向，作用在两个不同物体上，不能在同一受力图中抵消。</p>
+<h2><span class="lesson-tag">第7讲</span>力的合成与分解</h2>
+<div class="two-col"><div><p>合力与分力是作用效果的等效替代。正交分解时优先沿运动方向或接触面建轴。</p>
+<div class="box equation"><pre data-copy>Fₓ = F cosθ
+Fᵧ = F sinθ
+F = √(Fₓ² + Fᵧ²)</pre></div></div>
+<figure class="diagram"><svg viewBox="0 0 360 230" role="img" aria-label="斜面重力分解">
+<path d="M35 200L315 100V200Z" fill="#eee9e1" stroke="#6f675f" stroke-width="2"/><g transform="translate(195 140) rotate(-19.7)"><rect x="-38" y="-24" width="76" height="48" fill="#f3e6df" stroke="#8b3f32" stroke-width="2"/></g>
+<path d="M195 140V220" stroke="#8b3f32" stroke-width="4"/><path d="M195 140L265 165" stroke="#365d4b" stroke-width="4"/><path d="M195 140L170 210" stroke="#7a5317" stroke-width="4"/>
+<text x="205" y="224" fill="#8b3f32">mg</text><text x="250" y="155" fill="#365d4b">mg sinθ</text><text x="105" y="216" fill="#7a5317">mg cosθ</text>
+</svg><figcaption>沿斜面 mg sinθ；垂直斜面 mg cosθ。</figcaption></figure></div>
+<div class="box example"><div class="boxtitle">例5｜斜面静止</div><p>物块静止在倾角 θ 的粗糙斜面：沿斜面 f=mg sinθ，方向向上；垂直斜面 N=mg cosθ。不能未经判断就写 f=μN。</p></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>每画一个力都问：谁施加的？接触在哪里？方向由哪条规则决定？回答不出时，它可能是假想力。</p></div>
+</div></details>
+
+<details class="section" id="unit-f" data-title="共点力 平衡 整体法 隔离法 动态平衡 研究对象">
+<summary><span class="unit">F</span><span><span class="sum-title">共点力平衡与整体—隔离法</span><span class="sum-subtitle">第8—9讲 · 合力为零，以及怎样选择研究对象</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第8讲</span>共点力平衡</h2>
+<div class="box equation"><pre data-copy>矢量式：ΣF = 0
+分量式：ΣFₓ = 0，ΣFᵧ = 0</pre></div>
+<p>静止或匀速直线运动时 a=0，故合力为零。二力平衡要求等大、反向、同一直线且作用于同一物体；三力平衡时，任意两个力的合力与第三个力等大反向。</p>
+<div class="box example"><div class="boxtitle">例6｜对称绳悬灯</div><p>质量 m 的灯由两根对称绳悬挂，每根绳与水平夹角 θ。竖直方向 2T sinθ=mg，所以 T=mg/(2sinθ)。θ 越小张力越大；θ→0 时张力趋于无穷，说明绳不可能完全水平承重。</p></div>
+<h2><span class="lesson-tag">第9讲</span>整体、隔离与动态平衡</h2>
+<div class="box checklist"><div class="boxtitle">对象选择</div><ul>
+<li>求系统加速度或外部支持力：先整体，内部作用力不画。</li>
+<li>求绳张力、接触力：再隔离其中一个物体。</li>
+<li>各部分加速度不同或约束复杂时，不能草率共用同一个 a。</li>
+</ul></div>
+<div class="box derivation"><div class="boxtitle">动态平衡</div><p>物体始终平衡但某个力方向缓慢变化时，固定不变的力（常为重力），画闭合力三角形，再用几何关系、正弦定理或作图比较另两个力。</p></div>
+<div class="box trap"><div class="boxtitle">准确表述</div><p>内力不是“消失”，而是在系统整体的合外力中成对抵消。</p></div>
+</div></details>
+
+<details class="section" id="unit-g" data-title="牛顿运动定律 第二定律 应用 超重 失重 连接体 临界问题">
+<summary><span class="unit">G</span><span><span class="sum-title">牛顿运动定律及综合应用</span><span class="sum-subtitle">第10—12讲 · 从合力到加速度，再处理约束与临界</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第10讲</span>牛顿运动定律</h2>
+<div class="box definition"><ol>
+<li><strong>第一定律：</strong>力不是维持速度的原因，而是改变运动状态的原因。</li>
+<li><strong>第二定律：</strong>合外力决定加速度，ΣF=ma。</li>
+<li><strong>第三定律：</strong>物体间作用总是相互的，回答“力从哪里来”。</li>
+</ol></div>
+<div class="box equation"><pre data-copy>ΣF = ma
+ΣFₓ = maₓ，ΣFᵧ = maᵧ
+1 N = 1 kg·m/s²</pre></div>
+<h2><span class="lesson-tag">第11讲</span>标准应用流程</h2>
+<ol class="steps"><li>确定对象与运动阶段。</li><li>画受力图并选轴。</li><li>由运动状态判断 a，或先由运动学求 a。</li><li>分方向列 ΣF=ma，再配合运动学。</li><li>检查符号、单位、接触条件和阶段边界。</li></ol>
+<div class="box example"><div class="boxtitle">例7｜两物块连接</div><p>m₁=2 kg、m₂=3 kg 在水平粗糙面由轻绳相连，水平拉力 20 N，μ=0.2，g=10 m/s²。整体摩擦 10 N，a=(20−10)/5=2 m/s²。隔离 m₁：T−4=2×2，得 T=8 N。</p></div>
+<h2><span class="lesson-tag">第12讲</span>超重、失重、连接体与临界</h2>
+<div class="two-col"><div><p>体重计读数是支持力 N，不是重力 mg。取向上为正：</p>
+<div class="box equation"><pre data-copy>N - mg = ma
+向上加速：N = m(g+a) ＞ mg
+向下加速：N = m(g-a) ＜ mg
+自由落体：a = -g，N = 0</pre></div></div>
+<figure class="diagram"><svg viewBox="0 0 300 270" role="img" aria-label="电梯内受力">
+<rect x="55" y="25" width="190" height="220" fill="#f7f4ee" stroke="#6f675f" stroke-width="2"/><circle cx="150" cy="90" r="22" fill="#d8d0c5"/><path d="M150 112V180M150 130L112 160M150 130L188 160M150 180L120 220M150 180L180 220" fill="none" stroke="#4b443d" stroke-width="8" stroke-linecap="round"/>
+<path d="M150 145V48" stroke="#365d4b" stroke-width="4"/><path d="M150 145V255" stroke="#8b3f32" stroke-width="4"/><text x="160" y="55" fill="#365d4b">N</text><text x="160" y="250" fill="#8b3f32">mg</text>
+</svg><figcaption>读数随 N 变化；重力 mg 不变。</figcaption></figure></div>
+<div class="box checklist"><div class="boxtitle">临界翻译表</div><ul>
+<li>恰好离开接触面 → N=0。</li><li>绳刚好松弛 → T=0。</li><li>恰好开始滑动 → 静摩擦达到最大值。</li><li>恰好一起运动 → 所需静摩擦等于最大静摩擦。</li>
+</ul></div>
+<div class="box trap"><div class="boxtitle">常见误区</div><p>超重不一定向上运动，失重也不一定向下运动。只看加速度方向。</p></div>
+</div></details>
+
+<details class="section" id="unit-h" data-title="传送带 滑块 摩擦 共速 期末总复习 测试 考试策略">
+<summary><span class="unit">H</span><span><span class="sum-title">传送带、滑块与期末总复习</span><span class="sum-subtitle">第13—14讲 · 分段判断与完整解题闭环</span></span></summary>
+<div class="section-body">
+<h2><span class="lesson-tag">第13讲</span>传送带及滑块</h2>
+<div class="box definition"><div class="boxtitle">摩擦方向</div><p>摩擦力反对接触面之间的相对滑动或趋势。比较物块速度 v 与带速 u；共速后相对滑动消失，摩擦可能为零，也可能变为静摩擦，必须重新受力分析。</p></div>
+<ol class="steps"><li>画地面参考系中的带速与物块初速度。</li><li>按相对运动判断滑动摩擦方向并求 a。</li><li>求达到共速的候选时间。</li><li>比较“共速”和“到达末端”哪个先发生。</li><li>在先发生的事件处分段并重新判断。</li></ol>
+<div class="box example"><div class="boxtitle">例8｜水平传送带</div><p>带面向右以 4 m/s 匀速运动，物块静止放上，μ=0.2，g=10 m/s²。物块受向右摩擦，a=2 m/s²；2 s 共速，期间位移 4 m。若传送带足够长，之后物块以 4 m/s 匀速，水平摩擦为零。</p></div>
+<h2><span class="lesson-tag">第14讲</span>期末总复习</h2>
+<div class="box checklist"><div class="boxtitle">五步闭环</div><ol>
+<li><strong>对象：</strong>研究谁？是否先整体后隔离？</li>
+<li><strong>过程：</strong>是否在停止、共速、接触或绳状态改变处分段？</li>
+<li><strong>受力：</strong>每个力是否有施力物体？方向是否有依据？</li>
+<li><strong>规律：</strong>平衡用 ΣF=0；动力学用 ΣF=ma；再接运动学或约束。</li>
+<li><strong>检验：</strong>单位、符号、极限、阶段范围、接触力非负、摩擦不超上限。</li>
+</ol></div>
+<table class="map"><thead><tr><th>关键词</th><th>第一反应</th><th>必须检查</th></tr></thead><tbody>
+<tr><td>图像、斜率、面积</td><td>先看纵轴</td><td>面积是否带代数符号</td></tr>
+<tr><td>刹车、停止</td><td>先求停止时刻</td><td>时段是否越过停止点</td></tr>
+<tr><td>追上、相遇</td><td>写位置函数</td><td>时间根是否有效</td></tr>
+<tr><td>恰好、刚好</td><td>找 N=0、T=0、f=fmax 或 Δv=0</td><td>临界两侧状态</td></tr>
+<tr><td>多个物体</td><td>整体求 a，隔离求内力</td><td>加速度约束是否相同</td></tr>
+</tbody></table>
+<h3>自测：先作答，再展开</h3>
+<div class="quiz">
+<details><summary>1. v&lt;0、a&gt;0 时，物体一定减速吗？</summary><div class="answer">当前时刻减速，因为 v 与 a 反向；若 a 持续为正，速度减到零后会反向并加速。</div></details>
+<details><summary>2. v-t 图线在时间轴下方，面积表示什么？</summary><div class="answer">表示负位移；几何面积大小要结合纵坐标符号转成代数面积。</div></details>
+<details><summary>3. 静止在粗糙斜面上的物块，f 一定等于 μN 吗？</summary><div class="answer">不一定。静摩擦由平衡需要决定，此时 f=mg sinθ；只有达到上限时才等于最大静摩擦。</div></details>
+<details><summary>4. 电梯向上运动，体重计读数一定大于 mg 吗？</summary><div class="answer">不一定。向上减速时加速度向下，读数小于 mg。判断超失重看加速度。</div></details>
+<details><summary>5. 两车速度相等时，后车一定追上前车吗？</summary><div class="answer">不一定。速度相等只说明间距取极值；还要检查位置是否相同。</div></details>
+</div>
+<div class="box trap"><div class="boxtitle">考场最后 30 秒</div><p>只查四件事：单位对不对？符号是否符合方向？接触力有没有算成负数？时间是否越过停止、共速或接触改变的分段点？</p></div>
+<p class="print-hint">打印时可启用“背景图形”，保留定义框、例题框和误区框的颜色区分。</p>
+</div></details>
+</div></main>
+</div>
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite">公式已复制</div>
+<script>
+(function(){
+const sidebar=document.getElementById('sidebar'),layout=document.getElementById('layout'),q=document.getElementById('q'),sections=[...document.querySelectorAll('details.section')],links=[...document.querySelectorAll('[data-toc-link]')],toast=document.getElementById('copyToast');
+if(innerWidth<=860){sidebar.classList.add('hidden');layout.classList.add('no-sidebar')}
+document.getElementById('btnToggleSidebar').addEventListener('click',()=>{sidebar.classList.toggle('hidden');layout.classList.toggle('no-sidebar',sidebar.classList.contains('hidden'))});
+document.getElementById('btnExpandAll').addEventListener('click',()=>sections.forEach(s=>s.open=true));
+document.getElementById('btnCollapseAll').addEventListener('click',()=>sections.forEach(s=>s.open=false));
+document.getElementById('btnPrint').addEventListener('click',()=>{sections.forEach(s=>s.open=true);window.print()});
+function activate(hash){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===hash))}
+links.forEach(a=>a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(!target)return;e.preventDefault();target.open=true;activate(a.getAttribute('href'));history.replaceState(null,'',a.getAttribute('href'));target.scrollIntoView({behavior:'smooth',block:'start'});if(innerWidth<=860){sidebar.classList.add('hidden');layout.classList.add('no-sidebar')}}));
+function clearHighlights(){document.querySelectorAll('.hl').forEach(n=>n.classList.remove('hl'))}
+function applySearch(value){const term=value.trim().toLowerCase();clearHighlights();document.querySelectorAll('[data-toc-item]').forEach(item=>{const section=document.querySelector(item.querySelector('a').getAttribute('href'));const text=(item.textContent+' '+section.dataset.title+' '+section.textContent).toLowerCase();item.classList.toggle('hidden',Boolean(term&&!text.includes(term)))});if(!term)return;sections.forEach(s=>[s.querySelector('summary'),...s.querySelectorAll('h2,h3,.boxtitle')].forEach(n=>{if(n&&n.textContent.toLowerCase().includes(term))n.classList.add('hl')}))}
+q.addEventListener('input',()=>applySearch(q.value));document.getElementById('btnClear').addEventListener('click',()=>{q.value='';applySearch('');q.focus()});
+async function copyText(text){try{await navigator.clipboard.writeText(text);return true}catch(_){const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.left='-9999px';document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(__){}a.remove();return ok}}
+document.addEventListener('dblclick',async e=>{const target=e.target.closest('[data-copy]');if(target&&await copyText(target.innerText.trim())){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1200)}});
+const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)activate('#'+visible.target.id)},{rootMargin:'-20% 0px -70% 0px',threshold:[0,.25,.5]});sections.forEach(s=>observer.observe(s));
+if(location.hash){const target=document.querySelector(location.hash);if(target?.matches('details.section')){target.open=true;activate(location.hash)}}
+})();
+</script>
+</body>
+</html>

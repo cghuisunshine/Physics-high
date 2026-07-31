@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第6讲 力学基础：详细教程与配套习题</title>
+<style>
+:root{--bg:#f7f4ee;--panel:#fffdf8;--text:#27231f;--muted:#6f675f;--accent:#8b3f32;--border:#d8d0c5;--green:#365d4b;--amber:#7a5317;--danger:#8e302a;--purple:#5d4a77}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.72 "Avenir Next","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif}
+button,input{font:inherit}button{color:inherit}a{color:inherit}svg{max-width:100%;height:auto}
+.topbar{position:sticky;top:0;z-index:40;height:58px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 18px;background:var(--panel);border-bottom:1px solid var(--border)}
+.brand{min-width:0}.brand strong{white-space:nowrap}.brand span{margin-left:10px;color:var(--muted);font-size:13px}.actions{display:flex;gap:7px}.btn{border:1px solid var(--border);background:var(--panel);padding:7px 10px;border-radius:8px;cursor:pointer;text-decoration:none}.btn:hover{background:#f1ece4}.btn.primary{background:#3e3a35;color:#fff;border-color:#3e3a35}
+.layout{display:grid;grid-template-columns:256px minmax(0,1fr);min-height:calc(100vh - 58px)}.layout.no-sidebar{grid-template-columns:1fr}
+.sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow:auto;padding:20px 14px;background:#f1ede6;border-right:1px solid var(--border)}.sidebar.hidden{display:none}
+.search label{display:block;margin:0 0 7px;color:var(--muted);font-size:13px}.search-row{display:flex;gap:6px}.search input{min-width:0;width:100%;padding:8px 10px;background:var(--panel);border:1px solid var(--border);border-radius:8px}.search button{width:38px;border:1px solid var(--border);border-radius:8px;background:var(--panel);cursor:pointer}
+.toc h2{margin:22px 6px 8px;font-size:14px}.toc ul{list-style:none;margin:0;padding:0}.toc li.hidden{display:none}.toc a{display:block;padding:8px 9px;border-left:3px solid transparent;text-decoration:none;color:#544d46;font-size:14px}.toc a:hover{background:#e8e2d8}.toc a.active{background:#e7ddd2;border-left-color:var(--accent);color:var(--accent);font-weight:650}.sidebar-note{margin:18px 6px 0;padding-top:14px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+.main{min-width:0;padding:34px 38px 70px}.wrap{max-width:1000px;margin:0 auto}.intro{padding-bottom:26px;border-bottom:1px solid var(--border);margin-bottom:22px}
+h1{margin:0 0 10px;font-size:clamp(28px,4vw,43px);line-height:1.2;letter-spacing:-.02em}.lede{max-width:800px;margin:0;color:#554e47;font-size:17px}.source-note{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--green);background:#e7eee9;color:#344b40;font-size:14px}
+.goal-table,.compare{margin-top:20px;border-collapse:collapse;width:100%;background:var(--panel);font-size:14px}.goal-table th,.goal-table td,.compare th,.compare td{padding:9px 10px;border:1px solid var(--border);text-align:left;vertical-align:top}.goal-table th,.compare th{background:#eee9e1}
+details.section{margin:14px 0;background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden}details.section[open]{border-color:#bdb3a7}
+details.section>summary{display:flex;align-items:center;gap:12px;padding:15px 17px;cursor:pointer;list-style:none}details.section>summary::-webkit-details-marker{display:none}details.section>summary:after{content:"＋";margin-left:auto;color:var(--muted);font-size:18px}details.section[open]>summary:after{content:"−"}
+.unit{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--accent);border-radius:7px;color:var(--accent);font-weight:750;font-size:14px}.sum-title{font-weight:700}.sum-subtitle{display:block;color:var(--muted);font-size:13px}
+.section-body{padding:2px 20px 24px;border-top:1px solid var(--border)}.section-body h2{margin:25px 0 10px;font-size:22px}.section-body h3{margin:22px 0 8px;font-size:18px}.section-body h4{margin:17px 0 6px;font-size:16px}.section-body p{margin:8px 0}.section-body ul,.section-body ol{margin:8px 0;padding-left:24px}.section-body li+li{margin-top:5px}
+.box{margin:13px 0;padding:12px 14px;border:1px solid var(--border);border-left-width:4px;border-radius:8px;background:#fbf9f4}.boxtitle{margin-bottom:5px;font-weight:700}.definition{border-left-color:var(--green);background:#e7eee9}.equation{border-left-color:var(--accent);background:#f3e6df}.derivation{border-left-color:var(--purple);background:#eee9f3}.example{border-left-color:var(--amber);background:#f6edda}.trap{border-left-color:var(--danger);background:#f7e5e1}.checklist{border-left-color:#315a69;background:#e7eff1}
+pre[data-copy]{margin:9px 0 2px;padding:11px 12px;overflow:auto;white-space:pre-wrap;word-break:break-word;background:#f0ece4;border:1px dashed #b9afa3;border-radius:7px;font:14px/1.65 "SFMono-Regular",Consolas,monospace;cursor:copy}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.grid-2 .box{margin:0}.two-col{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);gap:18px;align-items:start}.diagram{margin:14px 0;padding:10px;border:1px solid var(--border);background:#fff}.diagram figcaption{margin-top:7px;color:var(--muted);font-size:13px;text-align:center}
+.steps{counter-reset:step;list-style:none!important;padding:0!important}.steps li{position:relative;padding:5px 0 8px 38px}.steps li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:4px;display:grid;place-items:center;width:25px;height:25px;border:1px solid #9f9285;border-radius:50%;font-size:12px;font-weight:700}
+.force-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}.force-item{padding:12px;border-top:3px solid var(--green);background:#f2eee7}.force-item strong{display:block;margin-bottom:4px}
+.quiz-controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.score{min-height:46px;padding:10px 12px;border:1px solid var(--border);background:#f2eee7;font-weight:650}
+.mcq{margin:12px 0;padding:14px;border:1px solid var(--border);background:#fff}.mcq legend{padding:0 4px;font-weight:700}.options{display:grid;gap:6px;margin-top:8px}.options label{display:block;padding:7px 9px;border:1px solid #e0d9cf;border-radius:6px;cursor:pointer}.options label:hover{background:#f6f2eb}.mcq.correct{border-left:4px solid #3d7458}.mcq.wrong{border-left:4px solid var(--danger)}.feedback{margin-top:8px;font-size:14px}.feedback.good{color:#2f674b}.feedback.bad{color:var(--danger)}
+.answer-list details{margin:9px 0;border:1px solid var(--border);background:#fff}.answer-list summary{cursor:pointer;padding:11px 13px;font-weight:650}.answer-content{padding:0 13px 13px;border-top:1px solid var(--border)}.answer-content p{margin:8px 0}.answer-content .answer-key{color:var(--accent);font-weight:700}
+.hl{background:#f4df9c!important;color:#332912!important}.copy-toast{position:fixed;right:18px;bottom:18px;padding:9px 12px;background:#2e2925;color:#fff;border-radius:7px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .16s;z-index:60}.copy-toast.show{opacity:1}.muted{color:var(--muted)}.print-hint{color:var(--muted);font-size:13px}
+@media(max-width:860px){.topbar{padding:0 8px}.brand{display:none}.actions{width:100%;justify-content:space-between}.btn{padding:7px 8px}.layout,.layout.no-sidebar{display:block}.sidebar{position:fixed;left:0;top:58px;z-index:35;width:min(86vw,300px);box-shadow:2px 0 8px rgba(0,0,0,.1)}.main{padding:24px 16px 55px}.grid-2,.two-col,.force-list{grid-template-columns:1fr}.wide-label{display:none}}
+@media print{.topbar,.sidebar,.copy-toast,.quiz-controls{display:none!important}.layout{display:block}.main{padding:0}.wrap{max-width:none}details.section{break-inside:avoid;border-radius:0}details.section:not([open])>.section-body{display:block}.answer-list details:not([open])>.answer-content{display:block}.box,.diagram,.mcq{break-inside:avoid}}
+</style>
+
+<!--
+====================================================
+PART A — CANONICAL TUTORIAL (MARKDOWN)
+====================================================
+
+# 第6讲 力学基础：详细教程与配套习题
+
+## A. 力的概念与受力分析语言
+力是物体对物体的作用。描述一个力要明确受力物体、施力物体、大小、方向和作用点。受力图只画指定研究对象所受的真实外力，不画它对其他物体施加的力。
+
+## B. 重力与重心
+重力是地球吸引使物体受到的力，G=mg，方向竖直向下。重心是各部分重力作用的等效作用点，可能位于物体外部；规则均匀物体的重心由几何形状决定。
+
+## C. 弹力与接触力
+弹力产生的条件是接触且发生形变。支持力垂直接触面并指向受力物体；绳拉力沿绳指向绳收缩方向；压力和支持力是作用于不同物体的一对相互作用力。
+
+## D. 胡克定律
+在弹性限度内，弹簧弹力大小 F=kx，其中 x 是相对原长的形变量，k 是劲度系数。F-x 图像斜率为 k；超出弹性限度不能继续套用线性关系。
+
+## E. 滑动摩擦力
+两个接触面相对滑动时产生滑动摩擦，方向沿接触面且与相对运动方向相反。常用模型 f=μN；N 是正压力大小，不一定等于 mg。
+
+## F. 静摩擦力
+静摩擦反对相对运动趋势，大小会在 0 到最大值之间自适应。先用运动状态或平衡条件求“需要的摩擦力”，再检查是否超过最大静摩擦力。
+
+## G. 牛顿第三定律与规范受力分析
+作用力和反作用力同时存在、同种性质、等大、反向、共线，作用在两个物体上。平衡力作用在同一物体上，未必同性质。受力分析按重力、弹力、摩擦力、其他外力的顺序进行。
+
+## H. 分层习题与考试策略
+配套 20 题分为概念辨析、受力分析、计算巩固和综合挑战。考试时按“定对象—找接触—判形变—判相对运动趋势—画方向—用状态检验”的流程，尤其检查静摩擦、N=mg 和作用反作用力三类高频误区。
+-->
+
+<script type="application/json" id="studyPageStructure">
+{
+  "title":"第6讲 力学基础：详细教程与配套习题",
+  "subject":"physics",
+  "language":"zh-CN",
+  "reference":"普通高中教科书《物理 必修 第一册》第三章第1至3节",
+  "sections":[
+    {"id":"unit-a","label":"A","title":"力的概念与分析语言"},
+    {"id":"unit-b","label":"B","title":"重力与重心"},
+    {"id":"unit-c","label":"C","title":"弹力与接触力"},
+    {"id":"unit-d","label":"D","title":"胡克定律"},
+    {"id":"unit-e","label":"E","title":"滑动摩擦力"},
+    {"id":"unit-f","label":"F","title":"静摩擦力"},
+    {"id":"unit-g","label":"G","title":"牛顿第三定律与受力分析"},
+    {"id":"unit-h","label":"H","title":"20道分层习题与解析"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><strong>第6讲：力学基础</strong><span>详细教程 + 20 道配套习题</span></div>
+  <div class="actions">
+    <a class="btn" href="high-school-mechanics-tutorial.html#unit-e"><span class="wide-label">返回</span>总教程</a>
+    <button class="btn" id="btnToggleSidebar" type="button">目录</button>
+    <button class="btn" id="btnExpandAll" type="button">全部展开</button>
+    <button class="btn" id="btnCollapseAll" type="button">全部折叠</button>
+    <button class="btn" id="btnPrint" type="button">打印</button>
+  </div>
+</header>
+
+<div class="layout" id="layout">
+<aside class="sidebar" id="sidebar" aria-label="目录">
+  <div class="search"><label for="q">搜索教程与习题</label><div class="search-row"><input id="q" type="search" placeholder="如：胡克、静摩擦、反作用力"><button id="btnClear" type="button" aria-label="清除搜索">×</button></div></div>
+  <nav class="toc" aria-label="教程目录"><h2>学习模块</h2><ul>
+    <li data-toc-item><a data-toc-link href="#unit-a">A　力的基本语言</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-b">B　重力与重心</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-c">C　弹力与接触力</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-d">D　胡克定律</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-e">E　滑动摩擦力</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-f">F　静摩擦力</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-g">G　第三定律与受力图</a></li>
+    <li data-toc-item><a data-toc-link href="#unit-h">H　20道分层习题</a></li>
+  </ul></nav>
+  <div class="sidebar-note">双击公式框可复制。练习答案默认折叠，建议先独立完成。</div>
+</aside>
+
+<main class="main"><div class="wrap">
+<section class="intro">
+  <h1>第6讲　力学基础</h1>
+  <p class="lede">本讲解决三个最根本的问题：一个力从哪里来、方向怎样判断、怎样只为指定对象画出完整而不重复的受力图。它是力的合成、平衡和牛顿定律的共同地基。</p>
+  <p class="source-note"><strong>教材依据：</strong>人教版必修第一册第三章第 1—3 节“重力与弹力”“摩擦力”“牛顿第三定律”。本页对教材概念作系统化整理，并增加考试题型与分层练习。</p>
+  <table class="goal-table"><thead><tr><th>学完后应能做到</th><th>达标表现</th></tr></thead><tbody>
+    <tr><td>识别真实力</td><td>能说出每个力的施力物体、受力物体、性质和方向</td></tr>
+    <tr><td>判断弹力与摩擦</td><td>能从接触、形变和相对运动（趋势）判断存在性与方向</td></tr>
+    <tr><td>区分两类“等大反向”</td><td>能区分平衡力与作用力—反作用力</td></tr>
+    <tr><td>规范画受力图</td><td>不漏力、不添力、不把反作用力画在同一对象上</td></tr>
+  </tbody></table>
+</section>
+
+<details class="section" id="unit-a" data-title="力 概念 受力物体 施力物体 大小 方向 作用点" open>
+<summary><span class="unit">A</span><span><span class="sum-title">力的概念与受力分析语言</span><span class="sum-subtitle">先回答“谁对谁做什么”</span></span></summary>
+<div class="section-body">
+<h2>1. 力不是物体“拥有的东西”</h2>
+<div class="box definition"><div class="boxtitle">定义</div><p>力是一个物体对另一个物体的作用。每个力至少关联两个物体：<strong>施力物体</strong>和<strong>受力物体</strong>。孤立地说“有一个向上的力”是不完整的。</p></div>
+<div class="force-list">
+  <div class="force-item"><strong>大小</strong>单位是牛顿（N）；可由测力计、规律或运动状态确定。</div>
+  <div class="force-item"><strong>方向</strong>由力的性质、接触几何和相对运动关系决定。</div>
+  <div class="force-item"><strong>作用点</strong>决定力作用在物体的哪个位置；质点模型中常画在质点上。</div>
+</div>
+<h3>2. 力的作用效果</h3>
+<ul><li>改变物体的运动状态，即改变速度的大小或方向。</li><li>使物体发生形变。形变可能很小，肉眼看不见，但仍可能产生弹力。</li></ul>
+<div class="box checklist"><div class="boxtitle">一句话描述一个力</div><pre data-copy>施力物体 对 受力物体 的 [力的性质]，大小为…，方向…，作用于…</pre><p>例：“地面对木块的支持力，方向垂直地面向上。”</p></div>
+<h3>3. 受力图只画研究对象所受的力</h3>
+<ol class="steps"><li>圈出研究对象，把其他物体都视为环境。</li><li>逐个寻找环境对研究对象的作用。</li><li>用箭头标出方向，并用 G、N、T、f 等规范符号标注。</li><li>逐个问“施力物体是谁”，删除没有来源的“动力”“惯性力”“运动力”。</li></ol>
+<div class="box trap"><div class="boxtitle">高频错误</div><p>把“速度方向”画成一个力；或把物体对地面的压力也画到物体自身的受力图上。压力作用在地面，不作用在物体上。</p></div>
+</div></details>
+
+<details class="section" id="unit-b" data-title="重力 重心 G mg 竖直向下 质量 g">
+<summary><span class="unit">B</span><span><span class="sum-title">重力与重心</span><span class="sum-subtitle">方向始终竖直向下，作用点可等效在重心</span></span></summary>
+<div class="section-body">
+<h2>1. 重力</h2>
+<div class="grid-2">
+<div class="box definition"><div class="boxtitle">重力的四要素</div><ul><li>施力物体：地球</li><li>受力物体：研究对象</li><li>方向：竖直向下</li><li>大小：G=mg</li></ul></div>
+<div class="box equation"><div class="boxtitle">基本关系</div><pre data-copy>G = mg
+[g] = N/kg = m/s²
+常用近似：g = 9.8 N/kg 或 10 N/kg</pre></div>
+</div>
+<p>“竖直向下”指当地铅垂线方向，不是“垂直斜面向下”，也不一定与纸面上的某条边垂直。质量是物体本身的属性，重力会随所在地的 g 略有变化。</p>
+<h2>2. 重心</h2>
+<div class="box definition"><p>物体各部分都受重力，可把它们的总体作用等效为集中在一点，这一点叫重心。规则且质量均匀的细棒重心在中点，球体重心在球心。环形物体的重心可位于没有材料的几何中心。</p></div>
+<div class="two-col"><div>
+<h3>悬挂法找薄板重心</h3><ol><li>在薄板 A 点悬挂，静止后重心必在 A 点正下方的铅垂线上。</li><li>换 D 点再次悬挂，画第二条铅垂线。</li><li>两条铅垂线交点就是重心。</li></ol>
+</div><figure class="diagram"><svg viewBox="0 0 320 250" role="img" aria-label="悬挂法确定重心">
+<path d="M55 35L245 65L210 215L75 190Z" fill="#f3e6df" stroke="#8b3f32" stroke-width="2"/><circle cx="80" cy="48" r="5" fill="#27231f"/><circle cx="225" cy="62" r="5" fill="#27231f"/>
+<path d="M80 48V230M225 62L135 230" stroke="#6f675f" stroke-width="2" stroke-dasharray="6 5"/><circle cx="161" cy="143" r="7" fill="#365d4b"/><text x="90" y="48">A</text><text x="235" y="62">D</text><text x="170" y="143" fill="#365d4b">重心 C</text>
+</svg><figcaption>两次悬挂得到的铅垂线交于重心。</figcaption></figure></div>
+<div class="box example"><div class="boxtitle">例1｜重力计算</div><p>质量 2.5 kg 的物体，取 g=9.8 N/kg，重力 G=2.5×9.8=24.5 N，方向竖直向下。</p></div>
+<div class="box trap"><div class="boxtitle">高频错误</div><p>在斜面题中把重力画成“垂直斜面”。重力永远竖直向下；垂直接触面的是支持力。</p></div>
+</div></details>
+
+<details class="section" id="unit-c" data-title="弹力 形变 支持力 压力 拉力 绳 张力 接触">
+<summary><span class="unit">C</span><span><span class="sum-title">弹力与接触力</span><span class="sum-subtitle">接触 + 形变，方向由恢复形变决定</span></span></summary>
+<div class="section-body">
+<h2>1. 弹力产生的条件</h2>
+<div class="box definition"><p><strong>直接接触</strong>且<strong>发生弹性形变</strong>。桌面看似坚硬，放上物体后也会发生微小形变，从而产生支持力。</p></div>
+<table class="compare"><thead><tr><th>弹力类型</th><th>方向规则</th><th>常用符号</th></tr></thead><tbody>
+<tr><td>面与物体的支持力</td><td>垂直接触面，指向受力物体</td><td>N 或 F<sub>N</sub></td></tr>
+<tr><td>物体对面的压力</td><td>垂直接触面，指向被压物体</td><td>F<sub>压</sub></td></tr>
+<tr><td>轻绳拉力</td><td>沿绳，指向绳收缩的方向；绳只能拉不能推</td><td>T</td></tr>
+<tr><td>轻杆弹力</td><td>可拉可推；若二力杆，方向沿杆</td><td>F</td></tr>
+<tr><td>弹簧弹力</td><td>沿弹簧轴线，方向阻碍形变</td><td>F<sub>弹</sub></td></tr>
+</tbody></table>
+<h3>2. 支持力不总等于重力</h3>
+<p>N=mg 只在特定条件下成立：物体在水平面上，竖直方向没有其他力，且竖直加速度为零。斜面上常有 N=mg cosθ；若外力带竖直分量，N 也会改变。</p>
+<div class="two-col"><div>
+<div class="box example"><div class="boxtitle">例2｜静止在斜面上的物块</div><p>物块与斜面接触并挤压，所以受垂直斜面向外的支持力；同时受竖直向下的重力。若斜面粗糙且物块有下滑趋势，还受沿斜面向上的静摩擦力。</p></div>
+</div><figure class="diagram"><svg viewBox="0 0 340 240" role="img" aria-label="斜面受力图">
+<path d="M25 210L310 100V210Z" fill="#eee9e1" stroke="#6f675f" stroke-width="2"/><g transform="translate(190 150) rotate(-21)"><rect x="-38" y="-23" width="76" height="46" fill="#f3e6df" stroke="#8b3f32" stroke-width="2"/></g>
+<path d="M190 150V228" stroke="#8b3f32" stroke-width="4"/><path d="M190 150L160 73" stroke="#365d4b" stroke-width="4"/><path d="M190 150L115 179" stroke="#7a5317" stroke-width="4"/>
+<text x="200" y="226" fill="#8b3f32">G</text><text x="142" y="70" fill="#365d4b">N</text><text x="98" y="173" fill="#7a5317">f</text>
+</svg><figcaption>G 竖直向下，N 垂直斜面，f 沿斜面。</figcaption></figure></div>
+<div class="box trap"><div class="boxtitle">“接触就一定有弹力”吗？</div><p>不一定。两个物体刚好接触但没有相互挤压时，弹力可为零。临界接触题常用 N=0 表示恰好分离。</p></div>
+</div></details>
+
+<details class="section" id="unit-d" data-title="胡克定律 弹簧 劲度系数 形变量 原长 F kx 图像">
+<summary><span class="unit">D</span><span><span class="sum-title">胡克定律</span><span class="sum-subtitle">F=kx：x 是形变量，不是弹簧总长度</span></span></summary>
+<div class="section-body">
+<h2>1. 定律与适用范围</h2>
+<div class="box equation"><div class="boxtitle">胡克定律</div><pre data-copy>在弹性限度内：F = kx
+F：弹力大小，单位 N
+x：伸长量或压缩量，单位 m
+k：劲度系数，单位 N/m</pre></div>
+<p>k 越大，弹簧越“硬”。同一根理想弹簧拉伸和压缩时都遵循 F=kx，但方向始终与形变方向相反。</p>
+<h3>2. F-x 图像</h3>
+<div class="two-col"><div>
+<div class="box derivation"><div class="boxtitle">斜率为什么是 k？</div><p>纵轴 F、横轴 x 时，直线斜率 ΔF/Δx。由 F=kx 可知 ΔF/Δx=k。图线过原点意味着 x=0 时弹力为零。</p></div>
+<div class="box checklist"><div class="boxtitle">数据处理</div><ol><li>先求原长 l₀。</li><li>每组形变量 x=l−l₀，并换算成米。</li><li>悬挂静止钩码时，弹簧弹力等于钩码重力 mg。</li><li>作 F-x 图线，用整体斜率求 k，减少单点误差。</li></ol></div>
+</div><figure class="diagram"><svg viewBox="0 0 330 250" role="img" aria-label="弹簧弹力形变量图像">
+<path d="M45 210V25M45 210H305" fill="none" stroke="#4b443d" stroke-width="2"/><g stroke="#ddd4c9" stroke-width="1"><path d="M45 170H305M45 130H305M45 90H305M45 50H305"/><path d="M95 25V210M145 25V210M195 25V210M245 25V210"/></g>
+<path d="M45 210L275 45" stroke="#8b3f32" stroke-width="4"/><path d="M105 210V167H165" fill="none" stroke="#365d4b" stroke-width="2"/><text x="112" y="188" fill="#365d4b">Δx</text><text x="70" y="164" fill="#365d4b">ΔF</text><text x="14" y="30">F</text><text x="300" y="230">x</text><text x="180" y="90" fill="#8b3f32">斜率 k=ΔF/Δx</text>
+</svg><figcaption>在弹性限度内，F-x 图像是一条过原点的直线。</figcaption></figure></div>
+<div class="box example"><div class="boxtitle">例3｜弹簧伸长</div><p>原长 12 cm、k=250 N/m 的弹簧被拉到 15 cm。x=0.03 m，因此 F=250×0.03=7.5 N。</p></div>
+<div class="box trap"><div class="boxtitle">高频错误</div><p>直接把 15 cm 当 x；忘记把 cm 换成 m；或超过弹性限度仍强行使用 F=kx。</p></div>
+</div></details>
+
+<details class="section" id="unit-e" data-title="滑动摩擦 摩擦因数 相对运动 f μN 正压力">
+<summary><span class="unit">E</span><span><span class="sum-title">滑动摩擦力</span><span class="sum-subtitle">沿接触面，反对相对滑动</span></span></summary>
+<div class="section-body">
+<h2>1. 产生条件与方向</h2>
+<div class="box definition"><ul><li>两个物体接触且相互挤压；</li><li>接触面有摩擦性质；</li><li>两接触面正在相对滑动。</li></ul><p>方向沿接触面，与<strong>受力物体相对施力物体</strong>的运动方向相反。</p></div>
+<div class="box equation"><pre data-copy>滑动摩擦力大小：fₖ = μₖN
+μₖ：动摩擦因数，无单位
+N：接触面间正压力大小</pre></div>
+<h3>2. 为什么 N 不一定等于 mg？</h3>
+<p>N 由垂直接触面的受力状态决定。若在水平面上用斜向上的力 F 拉物块，且竖直方向平衡，则 N=mg−F sinθ，摩擦力随之减小；向下推时则 N 增大。</p>
+<div class="box derivation"><div class="boxtitle">斜向上拉的推导</div><ol><li>竖直方向无加速度：N+F sinθ−mg=0。</li><li>所以 N=mg−F sinθ。</li><li>若物块滑动，f=μ(mg−F sinθ)。</li></ol></div>
+<div class="box example"><div class="boxtitle">例4｜斜拉物块</div><p>m=10 kg，g=10 N/kg，μ=0.20，用 50 N、与水平成 37° 的力斜向上拉（sin37°≈0.6）。N=100−30=70 N，滑动摩擦 f=0.2×70=14 N。</p></div>
+<div class="box trap"><div class="boxtitle">“摩擦力一定阻碍运动”吗？</div><p>它阻碍的是接触面间的相对运动，不一定阻碍物体相对地面的运动。传送带加速物块时，摩擦力可与物块运动方向相同。</p></div>
+</div></details>
+
+<details class="section" id="unit-f" data-title="静摩擦 相对运动趋势 最大静摩擦 自适应 推箱 斜面">
+<summary><span class="unit">F</span><span><span class="sum-title">静摩擦力</span><span class="sum-subtitle">先求“需要多少”，再查是否超过上限</span></span></summary>
+<div class="section-body">
+<h2>1. 静摩擦是“响应力”</h2>
+<div class="box equation"><pre data-copy>0 ≤ fₛ ≤ fₛ,max
+常用上限模型：fₛ,max = μₛN</pre></div>
+<p>物体相对接触面静止时，静摩擦不自动取最大值。水平推箱而箱子不动：推力 10 N 时 f=10 N；推力 20 N 时 f=20 N；只有“恰好开始滑动”时才达到 fₛ,max。</p>
+<h3>2. 相对运动趋势的判断</h3>
+<ol class="steps"><li>暂时假设接触面光滑，判断研究对象相对另一接触面会向哪边滑。</li><li>静摩擦方向与该趋势相反。</li><li>根据平衡或其他已知状态求所需静摩擦。</li><li>若所需值不超过最大静摩擦，静止假设成立；超过则发生滑动，改用滑动摩擦。</li></ol>
+<div class="two-col"><div>
+<div class="box example"><div class="boxtitle">例5｜斜面上的静摩擦</div><p>m=2 kg，θ=30°，g=10 N/kg，物块静止。沿斜面下滑趋势由 mg sinθ=10 N 引起，所以静摩擦沿斜面向上，大小恰为 10 N。它是否能静止，还要比较 10 N 与 fₛ,max。</p></div>
+<div class="box example"><div class="boxtitle">例6｜手握瓶子</div><p>瓶子静止时，重力使它有向下滑趋势，手对瓶子的静摩擦向上；竖直平衡给 f=mg。握得更紧会增大最大静摩擦能力，但只要瓶子仍静止，实际 f 仍等于 mg。</p></div>
+</div><figure class="diagram"><svg viewBox="0 0 340 250" role="img" aria-label="摩擦力随外力变化图">
+<path d="M45 210V25M45 210H310" fill="none" stroke="#4b443d" stroke-width="2"/><path d="M45 210L180 75" stroke="#365d4b" stroke-width="4"/><path d="M180 75V95L295 95" stroke="#8b3f32" stroke-width="4"/><path d="M180 75H45" stroke="#aaa" stroke-dasharray="5 5"/><text x="12" y="30">f</text><text x="300" y="230">F外</text><text x="74" y="150" fill="#365d4b">静摩擦：f=F外</text><text x="190" y="65" fill="#365d4b">fₛ,max</text><text x="210" y="118" fill="#8b3f32">滑动摩擦</text>
+</svg><figcaption>开始滑动前静摩擦随外力变化，达到上限后转为滑动摩擦。</figcaption></figure></div>
+<div class="box trap"><div class="boxtitle">高频错误</div><p>看到“粗糙”就画摩擦力。粗糙只说明可能有摩擦；水平桌面上静止且没有水平外力的物体，摩擦力为零。</p></div>
+</div></details>
+
+<details class="section" id="unit-g" data-title="牛顿第三定律 作用力 反作用力 平衡力 受力分析 顺序">
+<summary><span class="unit">G</span><span><span class="sum-title">牛顿第三定律与规范受力分析</span><span class="sum-subtitle">同种力、两个物体；平衡力则作用在一个物体上</span></span></summary>
+<div class="section-body">
+<h2>1. 作用力与反作用力</h2>
+<div class="box equation"><pre data-copy>两个物体间的相互作用力：
+同时产生、同时消失
+大小相等、方向相反、作用在同一直线上
+性质相同，分别作用在两个物体上</pre></div>
+<table class="compare"><thead><tr><th>比较</th><th>作用力—反作用力</th><th>平衡力</th></tr></thead><tbody>
+<tr><td>作用对象</td><td>两个物体</td><td>同一物体</td></tr>
+<tr><td>力的性质</td><td>必相同</td><td>可以不同</td></tr>
+<tr><td>产生消失</td><td>同时</td><td>不要求同时</td></tr>
+<tr><td>能否抵消</td><td>不能在单个物体受力图中抵消</td><td>可使同一物体合力为零</td></tr>
+</tbody></table>
+<div class="box example"><div class="boxtitle">例7｜书放在桌面上</div><ul>
+<li>书受的重力与桌面对书的支持力：是一对平衡力，作用在书上，性质不同。</li>
+<li>桌面对书的支持力与书对桌面的压力：是一对作用力和反作用力，分别作用在书和桌面上，都是弹力。</li>
+<li>地球对书的重力与书对地球的引力：也是一对作用力和反作用力。</li>
+</ul></div>
+<h2>2. “重—弹—摩—其他”受力分析法</h2>
+<ol class="steps"><li><strong>重力：</strong>只要研究对象在地球附近，通常先画 G。</li><li><strong>弹力：</strong>逐个检查接触点、绳、杆、弹簧是否形变或绷紧。</li><li><strong>摩擦力：</strong>逐个接触面判断相对运动或趋势。</li><li><strong>其他外力：</strong>人推、外加拉力、电场力等按题意补充。</li><li><strong>反查：</strong>每个箭头都能说出施力物体；不把研究对象对外界的力画进来。</li></ol>
+<div class="box checklist"><div class="boxtitle">考试作图规范</div><ul><li>同一研究对象的力从同一点画出（质点模型）。</li><li>箭头清楚，方向角度与接触几何一致。</li><li>重力用 G 或 mg，支持力用 N，绳拉力用 T，摩擦力用 f。</li><li>题目只要求示意图时不必严格按比例；要求“力的图示”时要有标度。</li></ul></div>
+<div class="box trap"><div class="boxtitle">“大人推小孩，大人的力更大”吗？</div><p>不是。两者相互作用力始终等大。小孩更容易产生较大加速度，是因为质量、其他外力和支撑条件不同，不是因为作用力—反作用力不等大。</p></div>
+</div></details>
+
+<details class="section" id="unit-h" data-title="配套习题 选择题 受力分析 计算题 综合挑战 答案 解析">
+<summary><span class="unit">H</span><span><span class="sum-title">20 道分层习题与完整解析</span><span class="sum-subtitle">先做题，再评分；主观题答案默认折叠</span></span></summary>
+<div class="section-body">
+<h2>第一层｜概念辨析（1—8，自动评分）</h2>
+<div class="quiz-controls"><button class="btn primary" id="checkQuiz" type="button">提交选择题</button><button class="btn" id="resetQuiz" type="button">重新作答</button></div>
+<div class="score" id="scoreBox" aria-live="polite">尚未评分。每题只有一个正确选项。</div>
+<form id="mcqForm">
+<fieldset class="mcq" data-answer="B"><legend>1. 关于力，下列说法正确的是（　）</legend><div class="options">
+<label><input type="radio" name="q1" value="A"> A. 物体运动就一定受到沿运动方向的力</label>
+<label><input type="radio" name="q1" value="B"> B. 一个力必有施力物体和受力物体</label>
+<label><input type="radio" name="q1" value="C"> C. 只有接触的物体之间才有力</label>
+<label><input type="radio" name="q1" value="D"> D. 静止物体一定不受力</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="C"><legend>2. 竖直向上飞行的火箭所受重力方向是（　）</legend><div class="options">
+<label><input type="radio" name="q2" value="A"> A. 竖直向上</label><label><input type="radio" name="q2" value="B"> B. 沿速度方向</label><label><input type="radio" name="q2" value="C"> C. 竖直向下</label><label><input type="radio" name="q2" value="D"> D. 与加速度方向相同</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="D"><legend>3. 原长 10 cm、k=200 N/m 的弹簧被拉到 13 cm，弹力大小为（　）</legend><div class="options">
+<label><input type="radio" name="q3" value="A"> A. 2 N</label><label><input type="radio" name="q3" value="B"> B. 3 N</label><label><input type="radio" name="q3" value="C"> C. 5 N</label><label><input type="radio" name="q3" value="D"> D. 6 N</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="A"><legend>4. 玻璃瓶静止在粗糙水平桌面上，且无水平外力。瓶子所受摩擦力是（　）</legend><div class="options">
+<label><input type="radio" name="q4" value="A"> A. 0</label><label><input type="radio" name="q4" value="B"> B. μmg</label><label><input type="radio" name="q4" value="C"> C. mg</label><label><input type="radio" name="q4" value="D"> D. 无法判断</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="B"><legend>5. 手水平压住竖直墙上的物块，物块静止。墙对物块的摩擦力方向是（　）</legend><div class="options">
+<label><input type="radio" name="q5" value="A"> A. 向下</label><label><input type="radio" name="q5" value="B"> B. 向上</label><label><input type="radio" name="q5" value="C"> C. 水平向左</label><label><input type="radio" name="q5" value="D"> D. 水平向右</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="D"><legend>6. 下列属于一对作用力和反作用力的是（　）</legend><div class="options">
+<label><input type="radio" name="q6" value="A"> A. 书的重力与桌面对书的支持力</label><label><input type="radio" name="q6" value="B"> B. 灯的重力与绳对灯的拉力</label><label><input type="radio" name="q6" value="C"> C. 木块受的重力与斜面摩擦力</label><label><input type="radio" name="q6" value="D"> D. 地球对书的引力与书对地球的引力</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="C"><legend>7. 关于支持力和压力，下列说法正确的是（　）</legend><div class="options">
+<label><input type="radio" name="q7" value="A"> A. 两者作用在同一物体上</label><label><input type="radio" name="q7" value="B"> B. 支持力必等于物体重力</label><label><input type="radio" name="q7" value="C"> C. 两者是同一接触产生的一对弹力</label><label><input type="radio" name="q7" value="D"> D. 有接触就一定有非零支持力</label></div><div class="feedback"></div></fieldset>
+
+<fieldset class="mcq" data-answer="B"><legend>8. 水平面上滑动的物块受到斜向上拉力 F，与水平夹角 θ。若竖直方向平衡，则支持力为（　）</legend><div class="options">
+<label><input type="radio" name="q8" value="A"> A. mg</label><label><input type="radio" name="q8" value="B"> B. mg−Fsinθ</label><label><input type="radio" name="q8" value="C"> C. mg+Fsinθ</label><label><input type="radio" name="q8" value="D"> D. Fcosθ</label></div><div class="feedback"></div></fieldset>
+</form>
+
+<h2>第二层｜受力分析（9—12）</h2>
+<div class="answer-list">
+<details class="answer-detail"><summary>9. 木块静止在粗糙斜面上。画出木块受力图，并说明摩擦方向。</summary><div class="answer-content"><p class="answer-key">答案：G、N、f，共三个力。</p><p>G 竖直向下；N 垂直斜面向外；若无摩擦木块将沿斜面向下滑，所以静摩擦 f 沿斜面向上。不要画“木块对斜面的压力”。</p></div></details>
+<details class="answer-detail"><summary>10. 物块放在光滑水平面上，与左侧被拉长的水平弹簧连接。画受力图。</summary><div class="answer-content"><p class="answer-key">答案：G、N、弹簧拉力，共三个力。</p><p>G 向下，N 向上，弹簧恢复原长，故对物块的弹力沿弹簧向左。光滑面没有摩擦力。</p></div></details>
+<details class="answer-detail"><summary>11. 小球用轻绳悬挂并紧靠光滑竖直墙面，静止。小球受哪些力？</summary><div class="answer-content"><p class="answer-key">答案：重力 G、绳拉力 T、墙的支持力 N。</p><p>G 竖直向下；T 沿绳指向悬点；N 垂直墙面指向小球。墙面光滑，不画摩擦力。</p></div></details>
+<details class="answer-detail"><summary>12. A 叠在 B 上，B 位于粗糙水平桌面。水平力拉 B，但 A、B 仍静止。分析 A 的受力。</summary><div class="answer-content"><p class="answer-key">答案：A 只受重力和 B 的支持力；A、B 间静摩擦为零。</p><p>因为 A 没有任何其他水平力，也没有相对 B 运动的趋势。B 所受外力由桌面对 B 的静摩擦平衡。粗糙接触面不代表必有摩擦力。</p></div></details>
+</div>
+
+<h2>第三层｜计算巩固（13—17）</h2>
+<div class="answer-list">
+<details class="answer-detail"><summary>13. 质量 5.0 kg 的物体，取 g=9.8 N/kg，求重力。</summary><div class="answer-content"><p class="answer-key">答案：49 N，方向竖直向下。</p><p>G=mg=5.0×9.8=49 N。</p></div></details>
+<details class="answer-detail"><summary>14. 弹簧原长 6.0 cm，悬挂 150 g 钩码后总长 11.8 cm，取 g=10 N/kg。估算劲度系数。</summary><div class="answer-content"><p class="answer-key">答案：约 26 N/m。</p><p>形变量 x=(11.8−6.0) cm=0.058 m；钩码静止，F=mg=0.150×10=1.50 N；k=F/x≈25.9 N/m。实验中应优先用多组点拟合直线斜率。</p></div></details>
+<details class="answer-detail"><summary>15. 重 100 N 的木箱在水平地面上，至少用 35 N 才能推动；推动后用 30 N 可保持匀速。求最大静摩擦、滑动摩擦、动摩擦因数；若用 20 N 推静止木箱，摩擦多大？</summary><div class="answer-content"><p class="answer-key">答案：35 N；30 N；0.30；20 N。</p><p>“至少推动”对应 fₛ,max=35 N；匀速时滑动摩擦等于推力 30 N；N=100 N，所以 μ=30/100=0.30。20 N 小于最大静摩擦，箱不动，实际静摩擦自适应为 20 N。</p></div></details>
+<details class="answer-detail"><summary>16. 空雪橇重 500 N，用 10 N 水平拉力可匀速。再装 500 N 货物后，滑动摩擦多大？</summary><div class="answer-content"><p class="answer-key">答案：20 N。</p><p>空载匀速得 μ=10/500=0.02。载货后总压力 N=1000 N，因此 f=μN=0.02×1000=20 N。</p></div></details>
+<details class="answer-detail"><summary>17. 某弹簧受 5 N 拉力时伸长 2.0 cm。在弹性限度内，受 8 N 拉力时伸长多少？</summary><div class="answer-content"><p class="answer-key">答案：3.2 cm。</p><p>同一弹簧 k 不变，F₁/x₁=F₂/x₂，所以 x₂=(8/5)×2.0 cm=3.2 cm。</p></div></details>
+</div>
+
+<h2>第四层｜综合挑战（18—20）</h2>
+<div class="answer-list">
+<details class="answer-detail"><summary>18. m=2 kg 的物块被水平力 F 压在竖直墙上，最大静摩擦因数 μₛ=0.40，g=10 N/kg。要使物块静止，F 至少多大？</summary><div class="answer-content"><p class="answer-key">答案：50 N。</p><p>水平面内 N=F；竖直方向需静摩擦平衡重力，所需 f=mg=20 N。静止条件 mg≤μₛN=μₛF，所以 F≥20/0.40=50 N。临界时静摩擦达到最大值。</p></div></details>
+<details class="answer-detail"><summary>19. m=2 kg 的物块放在 30° 粗糙斜面上，μₛ=0.60，g=10 N/kg。判断能否静止，并求静摩擦。</summary><div class="answer-content"><p class="answer-key">答案：能静止；静摩擦 10 N，沿斜面向上。</p><p>下滑分力 mg sin30°=10 N；N=mg cos30°≈17.32 N；最大静摩擦 μₛN≈10.39 N。因为所需 10 N 不超过上限，物块静止，实际 f=10 N。</p></div></details>
+<details class="answer-detail"><summary>20. m=5 kg 的物块在水平面上向右滑动，μ=0.20。用 20 N、与水平成 37° 的力斜向上拉，g=10 N/kg，sin37°=0.6。求支持力和滑动摩擦。</summary><div class="answer-content"><p class="answer-key">答案：N=38 N；f=7.6 N，方向向左。</p><p>竖直平衡：N+20×0.6=50，所以 N=38 N。物块相对地面向右滑，故摩擦向左；f=μN=0.2×38=7.6 N。</p></div></details>
+</div>
+
+<div class="box checklist"><div class="boxtitle">错题复盘对应表</div><ul>
+<li>1、6、7 错：回看 A、G，练“施力物体—受力物体”配对。</li>
+<li>2、4、5 错：回看 B、F，重做方向判断。</li>
+<li>3、14、17 错：回看 D，重点检查形变量和单位。</li>
+<li>8、15、16、18—20 错：回看 E、F，先求 N 和所需摩擦，再选公式。</li>
+</ul></div>
+<div class="box trap"><div class="boxtitle">考场策略</div><p>遇到受力题先别列式：用 15 秒完成“定对象、看接触、判形变、判相对趋势、逐力找施力物体”。静摩擦不先写 μN，支持力不先写 mg，作用力和反作用力不画在同一受力图里。</p></div>
+<p class="print-hint">打印前点击“全部展开”，可同时打印教程、题目与解析。</p>
+</div></details>
+
+</div></main>
+</div>
+<div class="copy-toast" id="copyToast" role="status" aria-live="polite">公式已复制</div>
+
+<script>
+(function(){
+const sidebar=document.getElementById('sidebar'),layout=document.getElementById('layout'),q=document.getElementById('q'),sections=[...document.querySelectorAll('details.section')],links=[...document.querySelectorAll('[data-toc-link]')],toast=document.getElementById('copyToast');
+if(innerWidth<=860){sidebar.classList.add('hidden');layout.classList.add('no-sidebar')}
+document.getElementById('btnToggleSidebar').addEventListener('click',()=>{sidebar.classList.toggle('hidden');layout.classList.toggle('no-sidebar',sidebar.classList.contains('hidden'))});
+document.getElementById('btnExpandAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+document.getElementById('btnCollapseAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=false));
+document.getElementById('btnPrint').addEventListener('click',()=>{document.querySelectorAll('details').forEach(d=>d.open=true);window.print()});
+function activate(hash){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===hash))}
+links.forEach(a=>a.addEventListener('click',e=>{const target=document.querySelector(a.getAttribute('href'));if(!target)return;e.preventDefault();target.open=true;activate(a.getAttribute('href'));history.replaceState(null,'',a.getAttribute('href'));target.scrollIntoView({behavior:'smooth',block:'start'});if(innerWidth<=860){sidebar.classList.add('hidden');layout.classList.add('no-sidebar')}}));
+function clearHighlights(){document.querySelectorAll('.hl').forEach(n=>n.classList.remove('hl'))}
+function applySearch(value){const term=value.trim().toLowerCase();clearHighlights();document.querySelectorAll('[data-toc-item]').forEach(item=>{const section=document.querySelector(item.querySelector('a').getAttribute('href'));const text=(item.textContent+' '+section.dataset.title+' '+section.textContent).toLowerCase();item.classList.toggle('hidden',Boolean(term&&!text.includes(term)))});if(!term)return;sections.forEach(s=>[s.querySelector('summary'),...s.querySelectorAll('h2,h3,.boxtitle')].forEach(n=>{if(n&&n.textContent.toLowerCase().includes(term))n.classList.add('hl')}))}
+q.addEventListener('input',()=>applySearch(q.value));document.getElementById('btnClear').addEventListener('click',()=>{q.value='';applySearch('');q.focus()});
+async function copyText(text){try{await navigator.clipboard.writeText(text);return true}catch(_){const a=document.createElement('textarea');a.value=text;a.style.position='fixed';a.style.left='-9999px';document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(__){}a.remove();return ok}}
+document.addEventListener('dblclick',async e=>{const target=e.target.closest('[data-copy]');if(target&&await copyText(target.innerText.trim())){toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1200)}});
+document.getElementById('checkQuiz').addEventListener('click',()=>{let score=0,answered=0;const items=[...document.querySelectorAll('.mcq')];items.forEach(item=>{const chosen=item.querySelector('input:checked'),feedback=item.querySelector('.feedback'),answer=item.dataset.answer;item.classList.remove('correct','wrong');feedback.className='feedback';if(!chosen){feedback.textContent='未作答';return}answered++;if(chosen.value===answer){score++;item.classList.add('correct');feedback.classList.add('good');feedback.textContent='正确'}else{item.classList.add('wrong');feedback.classList.add('bad');feedback.textContent='错误。正确答案：'+answer}});document.getElementById('scoreBox').textContent='得分：'+score+' / '+items.length+'；已作答：'+answered+' / '+items.length});
+document.getElementById('resetQuiz').addEventListener('click',()=>{document.getElementById('mcqForm').reset();document.querySelectorAll('.mcq').forEach(i=>{i.classList.remove('correct','wrong');i.querySelector('.feedback').textContent=''});document.getElementById('scoreBox').textContent='尚未评分。每题只有一个正确选项。'});
+const observer=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)activate('#'+visible.target.id)},{rootMargin:'-20% 0px -70% 0px',threshold:[0,.25,.5]});sections.forEach(s=>observer.observe(s));
+if(location.hash){const target=document.querySelector(location.hash);if(target?.matches('details.section')){target.open=true;activate(location.hash)}}
+})();
+</script>
+</body>
+</html>
