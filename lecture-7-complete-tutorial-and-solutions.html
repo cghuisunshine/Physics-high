@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第7讲 力的合成与分解｜完整教程与31题全解析</title>
+<style>
+:root{--paper:#f3efe6;--panel:#fffdf8;--ink:#28251f;--muted:#70685e;--line:#d8cfc2;--rust:#8b4032;--green:#355d4a;--blue:#3e6172;--gold:#926c2b;--soft:#ece6dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:68px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.72 "Avenir Next","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif}button,input{font:inherit;color:inherit}a{color:inherit}sub,sup{line-height:0}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;min-height:58px;padding:8px 18px;background:var(--panel);border-bottom:1px solid var(--line)}.brand{font-weight:780}.brand small{margin-left:9px;color:var(--muted);font-weight:500}.actions{margin-left:auto;display:flex;gap:7px}.btn{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:7px 10px;cursor:pointer;text-decoration:none}.btn:hover{background:var(--soft)}.layout{display:grid;grid-template-columns:248px minmax(0,1fr)}aside{position:sticky;top:59px;height:calc(100vh - 59px);overflow:auto;padding:18px 14px;background:#ebe5da;border-right:1px solid var(--line)}.search{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}nav h2{margin:19px 7px 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}nav a{display:block;padding:7px 9px;border-left:3px solid transparent;text-decoration:none;font-size:14px;color:#514a42}nav a:hover,nav a.active{background:#ddd5c8;border-left-color:var(--rust);color:var(--rust)}.side-note{margin:18px 7px;color:var(--muted);font-size:12px}main{min-width:0;padding:36px 38px 80px}.wrap{max-width:1060px;margin:auto}.hero{padding:8px 0 27px;border-bottom:1px solid var(--line)}h1{margin:0 0 10px;font-size:clamp(31px,4vw,49px);line-height:1.12;letter-spacing:-.025em}.lead{max-width:880px;margin:0;color:#554d44;font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{padding:5px 9px;border:1px solid var(--line);background:var(--panel);border-radius:999px;font-size:13px}.source{margin:18px 0 0;padding:12px 14px;border-left:4px solid var(--green);background:#e5ece7;color:#30483c}.chapter{margin:26px 0;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.chapter>h2{margin:0 0 16px;font-size:26px;line-height:1.3}.chapter>h2 .no{display:inline-grid;place-items:center;width:35px;height:35px;margin-right:8px;border:1px solid var(--rust);border-radius:6px;color:var(--rust);font-size:15px;vertical-align:3px}.chapter h3{margin:23px 0 8px;font-size:19px}.chapter h4{margin:16px 0 5px}.chapter p{margin:8px 0}.chapter ul,.chapter ol{padding-left:24px}.chapter li+li{margin-top:5px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.box{margin:13px 0;padding:13px 15px;border:1px solid var(--line);border-left:4px solid var(--blue);background:#f8f6f1;border-radius:7px}.box.def{border-left-color:var(--green);background:#e8efea}.box.formula{border-left-color:var(--rust);background:#f4e8e3}.box.warn{border-left-color:var(--gold);background:#f4eddf}.boxtitle{font-weight:780}.formula{display:block;margin:7px 0;padding:9px 11px;background:#eee8df;border:1px dashed #bcb1a3;border-radius:5px;font:15px/1.65 "SFMono-Regular",Consolas,monospace}.table-wrap{overflow:auto}.matrix{width:100%;border-collapse:collapse;margin:13px 0;font-size:14px}.matrix th,.matrix td{padding:9px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}.matrix th{background:#ece6dc}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:15px 0}.flow div{position:relative;padding:11px 8px;text-align:center;border:1px solid var(--line);background:#f4f0e8;font-size:13px}.flow div:not(:last-child):after{content:"→";position:absolute;right:-10px;top:50%;z-index:2;transform:translateY(-50%);color:var(--rust);font-weight:800}.visual{margin:14px 0;padding:12px;border:1px solid var(--line);background:#f7f3ec}.visual svg{display:block;width:100%;max-height:280px}.visual figcaption{color:var(--muted);font-size:13px;text-align:center}.problem{margin:17px 0;padding:18px;border:1px solid var(--line);border-top:3px solid var(--blue);background:#fff}.problem.exercise{border-top-color:var(--green)}.problem h3{display:flex;align-items:flex-start;gap:10px;margin:0 0 8px;font-size:18px}.badge{flex:none;padding:2px 7px;border-radius:4px;background:var(--blue);color:#fff;font-size:12px;line-height:1.55}.exercise .badge{background:var(--green)}.key{margin-left:auto;color:var(--rust);font-weight:800;white-space:nowrap}.prompt{color:#484139}.question-image{margin:12px 0 14px;padding:10px;border:1px solid var(--line);background:#f3efe7}.question-image img{display:block;width:100%;height:auto}.question-image figcaption{margin-top:7px;color:var(--muted);font-size:13px}.solution{margin-top:11px;padding:14px;border:1px solid var(--line);background:#faf8f3}.solution h4:first-child{margin-top:0;color:var(--green)}.solution h4{color:var(--blue)}.solution .answer{padding:9px 11px;border-left:4px solid var(--rust);background:#f3e7e2;color:#6f3025;font-weight:800}.audit a{color:var(--rust)}.page-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.page-gallery figure{margin:0;padding:8px;border:1px solid var(--line);background:#f5f1e9}.page-gallery img{display:block;width:100%;height:auto}.page-gallery figcaption{padding-top:6px;color:var(--muted);font-size:13px;text-align:center}.hidden{display:none!important}.footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.math{font-family:"Times New Roman","Noto Serif CJK SC",serif;font-size:1.06em}
+@media(max-width:860px){.brand small{display:none}.layout{display:block}aside{display:none}.top{padding:8px}.actions{margin-left:0}.top .brand{width:100%}.btn{padding:6px 8px}.hide-mobile{display:none}main{padding:24px 14px 55px}.chapter{padding:17px}.grid,.flow,.page-gallery{grid-template-columns:1fr}.key{white-space:normal}.flow div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-16px;transform:translateX(50%)}}
+@media print{.top,aside{display:none}.layout{display:block}main{padding:0}.wrap{max-width:none}.chapter{border-radius:0}.problem,.box,.matrix{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand">第7讲 · 力的合成与分解 <small>课件全内容 + 31题逐题解析</small></div><div class="actions"><a class="btn hide-mobile" href="high-school-mechanics-tutorial.html#unit-e">返回总教程</a><button class="btn" id="print" type="button">打印 / PDF</button></div></header>
+<div class="layout">
+<aside><input class="search" id="search" type="search" placeholder="搜索题号、概念或公式"><nav>
+<h2>知识教程</h2><a href="#overview">学习地图</a><a href="#m1">1 合成法则</a><a href="#m2">2 特殊结论与范围</a><a href="#m3">3 力的分解</a><a href="#m4">4 分解解数判断</a>
+<h2>课件全部题目</h2><a href="#examples-a">例1–9</a><a href="#examples-b">例10–17</a><a href="#examples-c">例18–23</a><a href="#exercises">练习1–8</a><a href="#audit">提取核对</a><a href="#source-pages">14页原图</a>
+</nav><p class="side-note">每题按“原题图 → 解题思路 → 详细推导 → 最终答案”排列，答案不会与题目分离。</p></aside>
+<main><div class="wrap">
+<section class="hero" id="overview">
+<h1>第7讲　力的合成与分解</h1>
+<p class="lead">本讲的核心是把复杂受力变成可计算的矢量几何：多个力可由一个合力等效替代，一个力也可按实际作用效果分解。教程完整提取课件中的图形和31道题，并把每道题的判断依据、计算过程与答案放在一起。</p>
+<div class="meta"><span class="tag">14页课件照片</span><span class="tag">4个知识模块</span><span class="tag">23道例题</span><span class="tag">8道练习</span><span class="tag">共31题</span></div>
+<p class="source"><strong>资料依据：</strong>讲义与原题来自 <code>lecture_7/5810.JPG–5825.JPG</code>；概念表述参照<a href="4【高中物理】必修一人教版.pdf">本地人教版《物理 必修第一册》</a>第三章第4节“力的合成和分解”（教材第72–75页，PDF第77–80页）。原题中的受力图、几何图、装置图和选项图均以照片裁图保留。</p>
+</section>
+
+<section class="chapter searchable" id="m1">
+<h2><span class="no">1</span>力的合成：先认清“等效替代”</h2>
+<div class="box def"><div class="boxtitle">合力与分力</div><p>若一个力产生的作用效果与几个力共同作用的效果相同，这一个力就是那几个力的<strong>合力</strong>，原来的几个力是它的<strong>分力</strong>。合力不是物体额外受到的新力，只是计算时的等效替代。</p></div>
+<div class="grid"><div class="box"><div class="boxtitle">平行四边形定则</div><p>把两个共点力作为同一顶点的两条邻边，所作平行四边形从公共顶点出发的对角线，就是合力。</p></div><div class="box"><div class="boxtitle">三角形定则</div><p>把第二个力平移到第一个力的箭头末端，首尾相接；从第一个力的起点指向第二个力的终点，就是合力。</p></div></div>
+<figure class="visual"><svg viewBox="0 0 760 250" role="img" aria-label="平行四边形法则与三角形法则示意图"><defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8b4032"/></marker><marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#355d4a"/></marker></defs><g transform="translate(30 20)"><path d="M40 180L230 180" stroke="#3e6172" stroke-width="5" marker-end="url(#ag)"/><path d="M40 180L145 55" stroke="#8b4032" stroke-width="5" marker-end="url(#ar)"/><path d="M145 55L335 55M230 180L335 55" stroke="#aaa096" stroke-width="2" stroke-dasharray="7 6"/><path d="M40 180L335 55" stroke="#355d4a" stroke-width="6" marker-end="url(#ag)"/><text x="110" y="207">F₁</text><text x="77" y="105">F₂</text><text x="203" y="103" fill="#355d4a">F</text></g><g transform="translate(410 20)"><path d="M20 180L155 180" stroke="#3e6172" stroke-width="5" marker-end="url(#ag)"/><path d="M155 180L260 55" stroke="#8b4032" stroke-width="5" marker-end="url(#ar)"/><path d="M20 180L260 55" stroke="#355d4a" stroke-width="6" marker-end="url(#ag)"/><text x="72" y="207">F₁</text><text x="192" y="125">F₂</text><text x="123" y="102" fill="#355d4a">F</text></g></svg><figcaption>两种作图本质相同：矢量允许平移，但大小和方向不能改变。</figcaption></figure>
+<div class="box formula"><div class="boxtitle">两力夹角为 θ 时的合力</div><span class="formula">F = √(F₁² + F₂² + 2F₁F₂cosθ)</span><p>方向可用正弦定理、余弦定理或分量法确定。千万不要把矢量直接作普通代数相加。</p></div>
+</section>
+
+<section class="chapter searchable" id="m2">
+<h2><span class="no">2</span>特殊情形、变化规律与合力范围</h2>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>情形</th><th>合力大小</th><th>方向</th></tr></thead><tbody><tr><td>同向，θ=0°</td><td>F=F₁+F₂（最大）</td><td>与两力同向</td></tr><tr><td>反向，θ=180°</td><td>F=|F₁−F₂|（最小）</td><td>与较大力同向</td></tr><tr><td>垂直，θ=90°</td><td>F=√(F₁²+F₂²)</td><td>tanα=F₂/F₁</td></tr><tr><td>两力相等</td><td>F=2F₀cos(θ/2)</td><td>沿夹角平分线</td></tr></tbody></table></div>
+<div class="grid"><div class="box formula"><div class="boxtitle">两个力的范围</div><span class="formula">|F₁−F₂| ≤ F ≤ F₁+F₂</span><p>两个端点都能取到。夹角从0°增大到180°，合力连续减小。</p></div><div class="box formula"><div class="boxtitle">三个力的范围</div><p>设最大者为 F<sub>max</sub>，其余两力之和为 S：</p><span class="formula">Fmin=max(Fmax−S, 0)<br>Fmax,total=F₁+F₂+F₃</span></div></div>
+<div class="box warn"><div class="boxtitle">“三力能否合成零”最快判断</div><p>若最大力不超过另外两个力之和，三力可首尾相接构成闭合三角形，合力可以为零；否则最小合力等于“最大力减去其余两力之和”。</p></div>
+</section>
+
+<section class="chapter searchable" id="m3">
+<h2><span class="no">3</span>力的分解：按作用效果选方向</h2>
+<p>力的分解是力的合成的逆运算。若不加限制，一个力可以分解成无数组分力；物理题中的方向来自接触面、绳、杆、运动方向或题目指定坐标轴。</p>
+<div class="flow"><div>① 定研究对象</div><div>② 判断力的实际效果</div><div>③ 选两条分解方向</div><div>④ 作平行四边形</div><div>⑤ 用几何或分量计算</div></div>
+<div class="grid"><div class="box"><div class="boxtitle">按效果分解</div><p>例如斜面上重力的两个效果：使物体沿斜面下滑，以及使物体压紧斜面。方向因此选为沿斜面和垂直斜面。</p></div><div class="box"><div class="boxtitle">正交分解</div><p>建立互相垂直的 x、y 轴，把每个力分解到两轴。优先让尽可能多的力落在坐标轴上，以减少未知分量。</p></div></div>
+<div class="box formula"><div class="boxtitle">斜面上的重力分解</div><span class="formula">沿斜面向下：G∥ = mg sinα<br>垂直斜面向下：G⊥ = mg cosα</span></div>
+<div class="box warn"><div class="boxtitle">分力不是新添的真实力</div><p>把重力分解后，受力图中用两个分力替代重力即可，不能同时再画 mg。合力和分力也不能同时列入同一个动力学方程，否则会重复计算。</p></div>
+</section>
+
+<section class="chapter searchable" id="m4">
+<h2><span class="no">4</span>分解有几组解：把问题变成“线与圆相交”</h2>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>已知条件</th><th>作图方法</th><th>解数</th></tr></thead><tbody><tr><td>两个分力的方向</td><td>过合力两端分别作平行线</td><td>通常唯一</td></tr><tr><td>一个分力的完整矢量</td><td>矢量相减 F₂=F−F₁</td><td>唯一</td></tr><tr><td>一个分力方向，另一个分力大小 r</td><td>方向是一条射线；大小 r 是以合力箭头为圆心的圆</td><td>0、1或2组</td></tr></tbody></table></div>
+<div class="box formula"><div class="boxtitle">最常考模型</div><p>已知合力大小 F；分力 F₁ 的方向与 F 夹角为 α；另一分力大小为 r。圆心到 F₁ 所在直线的距离：</p><span class="formula">d = F sinα</span><ul><li>r&lt;d：圆与直线不相交，无解。</li><li>r=d：相切，1组解。</li><li>d&lt;r&lt;F：通常有2组解。</li><li>r≥F：考虑 F₁ 必须沿指定射线，通常只有1组解。</li></ul></div>
+<p>真正做题时，应画出首尾相接的力三角形，再检查分力是否沿题目指定的<strong>正方向</strong>，不能只数整条直线的交点。</p>
+</section>
+
+<section class="chapter" id="examples-a"><h2><span class="no">5</span>经典例题1–9：合力的大小、方向与范围</h2><div id="list-a"></div></section>
+<section class="chapter" id="examples-b"><h2><span class="no">6</span>经典例题10–17：按作用效果分解</h2><div id="list-b"></div></section>
+<section class="chapter" id="examples-c"><h2><span class="no">7</span>经典例题18–23：最小值与解的个数</h2><div id="list-c"></div></section>
+<section class="chapter" id="exercises"><h2><span class="no">8</span>配套练习1–8：每题紧跟完整解析</h2><div id="list-q"></div></section>
+
+<section class="chapter" id="audit">
+<h2><span class="no">9</span>题目提取核对表</h2>
+<p>课件所有带编号题目均已进入教程。每道题都保留原照片裁图，并在同一卡片内给出解题思路、详细推导和答案。</p>
+<div class="table-wrap"><table class="matrix audit"><thead><tr><th>原始页</th><th>提取内容</th><th>数量</th></tr></thead><tbody><tr><td>5813.JPG</td><td><a href="#examples-a">例1–4</a></td><td>4</td></tr><tr><td>5814.JPG</td><td><a href="#examples-a">例5–9</a></td><td>5</td></tr><tr><td>5816.JPG</td><td><a href="#examples-b">例10–13</a></td><td>4</td></tr><tr><td>5817.JPG</td><td><a href="#examples-b">例14–16</a></td><td>3</td></tr><tr><td>5818.JPG</td><td><a href="#examples-b">例17</a></td><td>1</td></tr><tr><td>5820.JPG</td><td><a href="#examples-c">例18–23</a></td><td>6</td></tr><tr><td>5821–5822、5825.JPG</td><td><a href="#exercises">练习1–8</a></td><td>8</td></tr><tr><th colspan="2">合计：23道例题 + 8道练习</th><th>31</th></tr></tbody></table></div>
+<div class="box warn"><div class="boxtitle">建议使用方法</div><p>先遮住解析，仅看原题图在纸上作矢量图；再对照“解题思路”检查选法；最后独立复算。例1、8、9练范围，例10–17练作用效果，例18–23练几何解数。</p></div>
+</section>
+
+<section class="chapter" id="source-pages"><h2><span class="no">10</span>原始课件14页逐页索引</h2><p>点击缩略图可查看原始分辨率。逐题裁图均直接来自这些照片，没有重绘或删改题目图形。</p><div class="page-gallery" id="gallery"></div></section>
+<footer class="footer">第7讲完整教程 · 内容来自本地课件照片，并参照人教版《物理 必修第一册》第三章第4节校核。页面可直接打印或另存为PDF。</footer>
+</div></main></div>
+
+<script>
+const examples=[
+{n:1,t:`由F—θ图像求两个分力`,a:`10 N和8 N`,p:`两个分力大小不变，夹角θ变化，合力F的图像给出最大值18 N、最小值2 N，求两分力。`,i:`图像两端对应同向和反向。最大合力是两力之和，最小合力是两力之差。`,s:[`设F₁≥F₂。θ=0°时两力同向：F₁+F₂=18 N。`,`θ=180°时两力反向：F₁−F₂=2 N。`,`联立相加得2F₁=20 N，所以F₁=10 N；再得F₂=8 N。`],r:`两个分力分别为10 N和8 N。`},
+{n:2,t:`匀速下滑苹果所受周围作用力`,a:`mg，竖直向上`,p:`一箱苹果沿斜面匀速下滑，中央一只质量为m的苹果受到周围苹果的作用力，其合力多大、方向如何？`,i:`不要逐个猜接触力。中央苹果匀速，合力为零，把除重力外的所有接触力先合成为一个力。`,s:[`中央苹果受重力mg，方向竖直向下；还受周围苹果的多个接触力。`,`匀速直线运动意味着加速度为零，因此这些接触力的合力与重力等大、反向。`,`斜面方向不会改变重力的竖直方向。`],r:`周围苹果作用力的合力大小为mg，方向竖直向上。`},
+{n:3,t:`正六边形顶点五个力的合成`,a:`30 N，沿F₁方向`,p:`正六边形中，从同一顶点O指向其余五个顶点的五个力，最长对角线方向的F₁=10 N，求五力合力。`,i:`利用正六边形的对称性，把关于长对角线对称的力两两合成；横向分量抵消，纵向分量叠加。`,s:[`以F₁方向为x轴。正六边形边长设为a，则最长对角线长度2a，对应F₁=10 N。`,`另外四个矢量成两对镜像：每对垂直F₁的分量抵消，沿F₁的分量之和各等于F₁。`,`因此五力总和为F₁+F₁+F₁=3F₁。`],r:`合力为30 N，方向与F₁相同。`},
+{n:4,t:`两等力夹角变化`,a:`D`,p:`两个大小相等的共点力，夹角90°时合力为F；夹角变为60°时合力多大？`,i:`先由90°情形反求单个力，再用两等力合力公式。`,s:[`设每个力为P。夹角90°时F=√(P²+P²)=√2P，所以P=F/√2。`,`夹角60°时，合力沿角平分线，大小为2Pcos30°。`,`代入P：F′=2·(F/√2)·(√3/2)=√6F/2。`],r:`F′=√6F/2，选择D。`},
+{n:5,t:`三力合力最大的图形`,a:`BC，2F₃`,p:`三个力大小满足F₁<F₂<F₃，且数值可构成三角形边长。四种排列中哪一种合力最大？`,i:`把三个力首尾相接观察。要让合力最大，应让较小两力的合力与最大力同向；把所有箭头同时反向不会改变合力的大小。`,s:[`因为三个数可构成三角形，按图中边的方向拼接时，F₁与F₂的合矢量可以等于第三边F₃。`,`在C中，F₁+F₂与F₃同向，总合力为2F₃。`,`B是C中三个矢量同时反向，合力方向随之反向，但大小仍是2F₃。A、D分别得到2F₁、2F₂，都较小。`],r:`B、C两图的合力大小均为2F₃，最大。`},
+{n:6,t:`水泥袋受向上拉力仍未离地`,a:`A，0 N`,p:`重400 N的水泥袋静止在地面上，受到竖直向上200 N的拉力，求袋子所受合力。`,i:`“有向上拉力”不等于“合力向上”。袋子仍静止，地面支持力会自动调整。`,s:[`竖直向下重力G=400 N，向上拉力F=200 N。`,`静止要求ΣFᵧ=0，所以地面支持力N=G−F=200 N。`,`三个力的矢量和为200+200−400=0。`],r:`合力为0 N，选择A。`},
+{n:7,t:`定方向力增大时合力怎样变`,a:`C，可能先减小后增大`,p:`F₁大小方向不变；F₂方向不变、大小逐渐增大。两者夹角为钝角，判断合力大小变化。`,i:`把F₁在F₂方向上投影。钝角使该投影为负，F₂起初会抵消这一负分量。`,s:[`合力平方R²=F₁²+F₂²+2F₁F₂cosθ。`,`对F₂看成二次函数；θ为钝角时cosθ<0，最低点在F₂=−F₁cosθ>0。`,`所以随着F₂从0增大，R先减小；越过最低点后再增大。`],r:`合力可能先减小后增大，选择C。`},
+{n:8,t:`15 N与9 N的合力可能值`,a:`BCD`,p:`两个共点力分别为15 N和9 N，给出的15 N、6 N、23 N、25 N中哪些可能是合力？`,i:`直接使用两个力的合力闭区间。`,s:[`最小值|15−9|=6 N，最大值15+9=24 N。`,`合力可连续取[6,24] N内任意值。`,`15 N、6 N、23 N在区间内；25 N超过上限。`],r:`选择B、C、D。`},
+{n:9,t:`哪组三力可能合力为零`,a:`AB`,p:`判断若干组三力大小中，哪些可以通过调整方向使合力为零。`,i:`三力能闭合成三角形，当且仅当最大力不大于另外两力之和。`,s:[`5、7、8满足8<5+7，可以构成三角形。`,`10、10、10可构成等边三角形。`,`其余选项中最大力大于另外两力之和，方向怎样调整都还会剩余。`],r:`选择A、B。`},
+{n:10,t:`榫卯楔子对两侧木头的压力`,a:`AB`,p:`竖直截面的楔子顶角为θ，顶部受竖直向下力F。忽略楔子重力及摩擦，比较斜面压力F₁、竖直面压力F₂，并判断θ变化。`,i:`对楔子受力平衡。斜面法向力同时提供向上分量和平衡水平分量。`,s:[`斜面给楔子的法向反力与F₁等大，其竖直分量平衡F：F₁sinθ=F，所以F₁=F/sinθ。`,`其水平分量由竖直面反力平衡：F₂=F₁cosθ=Fcotθ。`,`0<θ<90°时sinθ<1且cosθ<1，所以F₁>F₂；θ越小，sinθ越小，F₁越大。`],r:`A、B正确。C错误，因为F₁>F；D错误，较小θ更易挤入。`},
+{n:11,t:`斧头劈木柴的放大作用`,a:`B，Fl/d`,p:`斧头横截面可看成等腰楔形，背宽d、斜边长l，背部受力F，求两侧对木柴的压力。`,i:`两侧压力相等，只有它们垂直斧背方向的分量共同平衡F。几何上分量比例为d/(2l)。`,s:[`设每侧压力为N。由等腰三角形几何，每个压力在F方向的分量为N·d/(2l)。`,`两个分量相加：2·N·d/(2l)=F。`,`解得N=Fl/d。`],r:`每侧压力为Fl/d，选择B。`},
+{n:12,t:`蹦床四根绳的张力`,a:`D，(F+mg)/2`,p:`运动员质量m，以竖直向下的力F压蹦床中心O；O周围四根相同绳张力为T，图中每一对绳夹角120°，求T。`,i:`先把每一对等大张力合成。两个等大力夹角120°时，合力大小恰等于T。`,s:[`一对绳的合力为2Tcos60°=T，方向沿角平分线向上。`,`左右两对的水平分量互相抵消，两个向上合力总计2T。`,`中心承受运动员重力mg和额外向下作用力F，平衡条件2T=F+mg。`],r:`T=(F+mg)/2，选择D。`},
+{n:13,t:`哪种斧头更容易劈开木柴`,a:`B`,p:`比较不同斧头截面，判断哪一种更省力。`,i:`由上一题N=Fl/d：同样背部作用力F下，斜边越长、背宽越小，侧向挤压力越大。`,s:[`比较图中的几何比例l/d。`,`选项B的两斜边较长而刃口较窄，使l/d最大。`,`因此同样用力时侧向分力最大，最容易把木柴劈开。`],r:`选择B。`},
+{n:14,t:`斜面上重力分解的正确理解`,a:`D`,p:`把光滑斜面上物体的重力分成沿斜面F₁和垂直斜面F₂，判断分力与实际受力的说法。`,i:`分力只替代重力，不是多出来的两个真实作用力。判断总效果时可用原力，也可用分力，但不能重复。`,s:[`物体实际受到重力mg和斜面支持力N。`,`把mg替换为F₁+F₂后，总合力是N+F₁+F₂，它与N+mg完全等效。`,`F₁、F₂没有独立施力物体，不能说物体额外受到这两个力。`],r:`选择D。`},
+{n:15,t:`按实际作用效果分解的正确图`,a:`B`,p:`四幅图给出一个力的不同分解方向，选出符合实际作用效果的一幅。`,i:`先找被分解力的两个实际效果方向，而不是为了画出漂亮的平行四边形随意选边。`,s:[`选项B的结点受重力向下，两根绳的拉力沿绳。`,`要用重力的两个分力分别与两绳张力平衡，分力方向应沿两根张力的反方向，即沿绳的向下延长线。`,`其余图的分力方向未对应约束或接触所允许的作用方向。`],r:`选择B。`},
+{n:16,t:`球夹在竖直墙与光滑支点之间`,a:`F₁=100√3 N，F₂=200 N`,p:`重100 N的光滑球靠在竖直墙和支点A之间，AO与竖直方向夹角60°。求墙和A对球的作用力。`,i:`三个力平衡：重力竖直；墙力水平；A的支持力沿AO。分解A的支持力即可。`,s:[`设A对球的支持力为F₂，沿AO斜向上；墙的支持力为F₁，水平。`,`竖直平衡：F₂cos60°=100 N，所以F₂=200 N。`,`水平平衡：F₁=F₂sin60°=200·√3/2=100√3 N。`],r:`墙的作用力F₁=100√3 N；A点作用力F₂=200 N。`},
+{n:17,t:`三种光滑支承下重力的作用效果`,a:`见三组分量`,p:`同一小球放在倾角α的光滑斜面旁，分别再由垂直斜面的挡板、竖直墙或水平杆支承，画出重力分解并求各支持力。`,i:`支承只能沿接触面的法线或杆的轴线施力。把重力沿这两个允许方向分解。`,s:[`甲：另一挡板与斜面垂直，两个支持力互相垂直。沿斜面分量为mgsinα，垂直斜面分量为mgcosα。`,`乙：竖直墙提供水平力，斜面提供法向力。由力三角形得墙力=mgtanα，斜面支持力=mg/cosα。`,`丙：水平杆对球的作用沿水平方向，与乙的两条允许方向相同，因此水平杆力=mgtanα，斜面支持力=mg/cosα。`],r:`甲：mgsinα、mgcosα；乙和丙：水平分力mgtanα，斜面法向分力mg/cosα。`},
+{n:18,t:`已知一分力方向与另一分力大小`,a:`B，两组解`,p:`合力F=10 N；一个分力方向与F成30°；另一个分力大小为6 N。问有几组分解。`,i:`比较给定长度r与合力端点到指定方向直线的垂距d=Fsinα。`,s:[`d=10sin30°=5 N。`,`给定分力r=6 N，满足d<r<F，即5<6<10。`,`以合力端点为圆心、6 N为半径的圆与指定方向射线有两个交点，对应两组力三角形。`],r:`有两组解，选择B。`},
+{n:19,t:`使合力沿OO′方向的最小附加力`,a:`B，Fsinθ`,p:`水平面上的物体先受水平力F。再加一个力，使两力合力沿与F成θ的OO′方向，求第二个力的最小值。`,i:`合力终点必须落在OO′射线上；第二个力连接F的箭头端与这条射线。点到直线的垂线最短。`,s:[`从F的末端向OO′作垂线，这一垂线就是最短的附加力。`,`F与OO′夹角为θ，直角三角形中垂距d=Fsinθ。`,`其他方向的附加力都对应更长的斜线。`],r:`最小附加力为Fsinθ，选择B。`},
+{n:20,t:`20 N合力分解的最小分力`,a:`A，16 N`,p:`F=20 N，一个分力F₁的方向与F成53°，求另一个分力F₂的最小值。`,i:`与例19相同：F₂最小时垂直于F₁的指定方向。`,s:[`最小值等于合力端点到F₁方向直线的垂距。`,`F₂,min=Fsin53°。`,`由sin53°=0.8，F₂,min=20×0.8=16 N。`],r:`16 N，选择A。`},
+{n:21,t:`60 N合力、35 N分力的解数`,a:`BC`,p:`合力F=60 N；F₁方向与F成30°；F₂大小35 N。判断F₁大小和F₂方向是否唯一。`,i:`先求临界垂距，再比较35 N与垂距及合力60 N。`,s:[`d=60sin30°=30 N。`,`30<35<60，所以圆与指定射线相交两次，存在两组分解。`,`两组图中F₁的长度不同，F₂的方向也不同。`],r:`F₁有两个可能大小，F₂有两个可能方向，选择B、C。`},
+{n:22,t:`100 N合力在不同分力大小下的解数`,a:`BD`,p:`合力F=100 N；一个分力方向与F成30°。判断另一分力为40、50、60、80 N时的解数说法。`,i:`临界长度d=100sin30°=50 N；再按r与d、F比较。`,s:[`r=40<50：无解，所以A“存在一解”错误。`,`r=50=d：圆与方向线相切，恰有一解，B正确。`,`r=60和80均满足50<r<100，均有两组解。因此C“60 N无解”错误，D“80 N有两组解”正确。`],r:`选择B、D。`},
+{n:23,t:`50 N合力、30 N分力的解数`,a:`AC`,p:`合力F=50 N；F₁方向与F成30°；F₂大小30 N。判断两分力的大小、方向可能性。`,i:`用临界垂距判断交点数，再把“两个交点”翻译为分力大小和方向。`,s:[`d=50sin30°=25 N。`,`25<30<50，所以存在两组分解。`,`两个交点使F₁有两个可能大小，同时F₂也有两个可能方向。`],r:`选择A、C。`}
+];
+
+const exercises=[
+{n:1,t:`帆船受风力的推进分力`,a:`B`,p:`风对帆的作用力F=1000 N，方向垂直帆面；帆面与航向夹角θ=37°。求沿航向推进力，并判断调帆规律。`,i:`F与帆垂直，所以F与航向夹角为90°−37°=53°。`,s:[`沿航向分力F推进=Fcos53°=1000×0.6=600 N。`,`垂直航向的侧向分力为Fsin53°=800 N。`,`若只按这个定值F模型，θ增大时F与航向夹角减小，推进分力增大。`],r:`推进力600 N，选择B。`},
+{n:2,t:`刀刃两侧木头的压力比较`,a:`B`,p:`刀刃截面一侧竖直、一侧倾斜，背部受向下作用力。判断刀刃对左右木头的压力关系及作用力、反作用力表述。`,i:`对刀刃做三力平衡。倾斜侧法向力必须同时提供向上和水平分量。`,s:[`右侧竖直面只能提供水平支持力，不能平衡向下外力。`,`左侧斜面的法向力必须有向上分量平衡外力，其水平分量再与右侧支持力平衡。`,`所以左侧法向力的大小大于右侧水平支持力。刀对木与木对刀分别是作用力和反作用力，不能混成同一物体上的平衡力。`],r:`选择B。`},
+{n:3,t:`180 N竖直力的斜向分解`,a:`AC`,p:`向下合力F=180 N；左分力与F夹角α=37°，右分力与F夹角θ可变。判断不同θ下右分力F₂的数值。`,i:`力三角形用正弦定理，右分力对面的角为α。`,s:[`由正弦定理：F₂/sinα=F/sin(α+θ)，所以F₂=Fsinα/sin(α+θ)。`,`θ=37°：F₂=180×0.6/sin74°≈112.5 N，对应A。`,`θ=53°：sin90°=1，F₂=108 N，不是144 N。`,`θ=90°：sin127°=sin53°=0.8，F₂=135 N，对应C。`,`若F₂=100 N，则所需sin(α+θ)=108/100>1，不可能。`],r:`选择A、C。`},
+{n:4,t:`给定不同条件时分解是否唯一`,a:`ABD`,p:`合力F已知，一个分力F₁的方向与F成θ。判断再知道哪些条件可唯一分解，以及另一分力的最小值。`,i:`区分“知道方向”和“只知道大小”。两方向确定会锁定平行四边形；长度圆可能产生多个交点。`,s:[`若再知道F₂方向，两条方向射线确定，分解唯一，A正确。`,`若知道F₁大小，F₁完整矢量已知，F₂=F−F₁唯一，B正确。`,`只知道F₂大小时，圆与射线可能0、1或2交点，不能保证唯一。`,`F₂最小时是点到F₁方向的垂线，F₂,min=Fsinθ，D正确。`],r:`选择A、B、D。`},
+{n:5,t:`游泳划水力的水平分力`,a:`A，40√3 N`,p:`手对水的作用力大小80 N，与水平方向夹角30°，求水平方向分力。`,i:`分力与邻边对应余弦。`,s:[`水平分力Fₓ=Fcos30°。`,`Fₓ=80×√3/2=40√3 N。`,`竖直分量若需要则为80sin30°=40 N。`],r:`水平分力为40√3 N，选择A。`},
+{n:6,t:`旋转一个分力后合力仍竖直`,a:`BC`,p:`F₁与F₂的合力竖直向下。把F₂顺时针转60°为F₂′，大小不变，F₁与F₂′的合力仍竖直向下。判断各结论。`,i:`两次合力都无水平分量，因此F₂与F₂′的水平分量必须相同；大小也相同。`,s:[`同一矢量转过60°且前后水平分量相同，说明两方向关于水平方向对称。`,`因此F₂和F₂′各与水平方向夹30°，这支持题图中的角度关系。`,`题目未给绝对尺度，整体按比例放大或缩小都不改变方向关系，因此F₁取5 N是可能的。`,`不能推出F₁一定大于F₂；两次F₁与F₂的夹角也不应误判为旋转角60°。`],r:`选择B、C。`},
+{n:7,t:`举重运动员握距与手臂受力`,a:`ACD`,p:`运动员对称举杠铃，讨论握距变大或变小时手臂受力及稳定性。`,i:`两臂作用力的竖直分量之和托住杠铃。握距改变会改变臂力与竖直方向的夹角。`,s:[`设每臂力为T，与竖直夹角β，则2Tcosβ=G，T=G/(2cosβ)。`,`握距增大时β增大、cosβ减小，所以每臂受力增大，A正确。`,`减小握距可减小手臂受力，C正确。`,`但握距过小会降低左右方向的控制与稳定性，实际动作中不能无限缩小，D正确。`],r:`选择A、C、D。`},
+{n:8,t:`自动扶梯先加速后匀速`,a:`BD`,p:`扶梯斜向左上运行，载人时先加速后匀速。判断乘客是否受摩擦，以及扶梯对乘客的合作用力方向。`,i:`把扶梯的支持力和摩擦力合成为“扶梯对人”的作用力。加速阶段合力与加速度同向；匀速阶段合力为零。`,s:[`加速阶段，乘客加速度沿扶梯左上。竖直支持力不能单独提供水平分量，因此静摩擦向左，乘客受到摩擦。`,`扶梯对乘客的合作用力R满足R+mg=ma，所以R指向左上方而不是竖直。`,`匀速阶段a=0，沿斜面不再需要水平加速；在题设模型中摩擦为0，扶梯作用力仅为竖直向上的支持力，与重力平衡。`],r:`加速时作用力斜向左上，匀速时竖直向上；选择B、D。`}
+];
+
+function card(x,kind){const prefix=kind==='例题'?'ex':'q';const cls=kind==='练习'?'problem exercise searchable':'problem searchable';return `<article class="${cls}" id="${prefix}${String(x.n).padStart(2,'0')}"><h3><span class="badge">${kind}${x.n}</span>${x.t}<span class="key">答案 ${x.a}</span></h3><p class="prompt">${x.p}</p><figure class="question-image"><a href="lecture_7/extracted_questions/${prefix}${String(x.n).padStart(2,'0')}.jpg"><img loading="lazy" src="lecture_7/extracted_questions/${prefix}${String(x.n).padStart(2,'0')}.jpg" alt="${kind}${x.n}原题与图形"></a><figcaption>${kind}${x.n}原题照片：题干、图形和选项完整保留；点击查看原尺寸。</figcaption></figure><div class="solution"><h4>解题思路</h4><p>${x.i}</p><h4>详细推导</h4><ol>${x.s.map(v=>`<li>${v}</li>`).join('')}</ol><p class="answer">最终答案：${x.r}</p></div></article>`}
+document.getElementById('list-a').innerHTML=examples.slice(0,9).map(x=>card(x,'例题')).join('');
+document.getElementById('list-b').innerHTML=examples.slice(9,17).map(x=>card(x,'例题')).join('');
+document.getElementById('list-c').innerHTML=examples.slice(17).map(x=>card(x,'例题')).join('');
+document.getElementById('list-q').innerHTML=exercises.map(x=>card(x,'练习')).join('');
+const pages=['5810','5811','5812','5813','5814','5815','5816','5817','5818','5819','5820','5821','5822','5825'];
+const labels=['第7讲封面','合成法则','特殊情形与范围','例1–4','例5–9','力的分解','例10–13','例14–16','例17','分解解数','例18–23','练习1–4','练习5–7','练习8'];
+document.getElementById('gallery').innerHTML=pages.map((p,i)=>`<figure><a href="lecture_7/${p}.JPG"><img loading="lazy" src="lecture_7/${p}.JPG" alt="第7讲原图${p}"></a><figcaption>${p} · ${labels[i]}</figcaption></figure>`).join('');
+document.getElementById('print').addEventListener('click',()=>window.print());
+const input=document.getElementById('search');input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();document.querySelectorAll('.searchable').forEach(el=>el.classList.toggle('hidden',q&&!el.textContent.toLowerCase().includes(q)))});
+const links=[...document.querySelectorAll('nav a')];const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const observer=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-20% 0px -70%'});sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
