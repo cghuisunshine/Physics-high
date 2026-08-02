@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第6讲 力学基础｜完整教程与34题全解析</title>
+<style>
+:root{--paper:#f6f2e9;--panel:#fffdf8;--ink:#29251f;--muted:#70675c;--line:#d9d0c3;--rust:#8a4032;--green:#365d4b;--blue:#3d5f72;--gold:#8a6426;--soft:#eee8de}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:66px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.72 "Avenir Next","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif}button,input{font:inherit;color:inherit}a{color:inherit}sub,sup{line-height:0}.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;min-height:58px;padding:8px 18px;background:var(--panel);border-bottom:1px solid var(--line)}.brand{font-weight:750}.brand small{margin-left:9px;color:var(--muted);font-weight:500}.topnav{margin-left:auto;display:flex;flex-wrap:wrap;gap:7px}.btn{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:7px 10px;cursor:pointer;text-decoration:none}.btn:hover{background:var(--soft)}.layout{display:grid;grid-template-columns:245px minmax(0,1fr)}aside{position:sticky;top:59px;height:calc(100vh - 59px);overflow:auto;padding:18px 14px;background:#eee9df;border-right:1px solid var(--line)}.search{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}nav h2{margin:19px 7px 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}nav a{display:block;padding:7px 9px;border-left:3px solid transparent;text-decoration:none;font-size:14px;color:#514a42}nav a:hover,nav a.active{background:#e3dbcf;border-left-color:var(--rust);color:var(--rust)}.side-note{margin:18px 7px;color:var(--muted);font-size:12px}main{min-width:0;padding:36px 38px 80px}.wrap{max-width:1050px;margin:auto}.hero{padding:8px 0 27px;border-bottom:1px solid var(--line)}h1{margin:0 0 10px;font-size:clamp(30px,4vw,48px);line-height:1.14;letter-spacing:-.025em}.lead{max-width:830px;margin:0;color:#554d44;font-size:18px}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{padding:5px 9px;border:1px solid var(--line);background:var(--panel);border-radius:999px;font-size:13px}.source{margin:18px 0 0;padding:12px 14px;border-left:4px solid var(--green);background:#e7eee9;color:#31493d}.chapter{margin:26px 0;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.chapter>h2{margin:0 0 16px;font-size:26px;line-height:1.3}.chapter>h2 .no{display:inline-grid;place-items:center;width:35px;height:35px;margin-right:8px;border:1px solid var(--rust);border-radius:6px;color:var(--rust);font-size:15px;vertical-align:3px}.chapter h3{margin:24px 0 8px;font-size:19px}.chapter h4{margin:17px 0 6px}.chapter p{margin:8px 0}.chapter ul,.chapter ol{padding-left:24px}.chapter li+li{margin-top:5px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.box{margin:13px 0;padding:13px 15px;border:1px solid var(--line);border-left:4px solid var(--blue);background:#f8f6f1;border-radius:7px}.box.def{border-left-color:var(--green);background:#e9efeb}.box.formula{border-left-color:var(--rust);background:#f4e8e3}.box.warn{border-left-color:var(--gold);background:#f4eddf}.boxtitle{font-weight:750}.formula-line{display:block;margin:7px 0;padding:9px 11px;background:#eee8df;border:1px dashed #bcb1a3;border-radius:5px;font:15px/1.65 "SFMono-Regular",Consolas,monospace}.table-wrap{overflow:auto}.matrix{width:100%;border-collapse:collapse;margin:13px 0;font-size:14px}.matrix th,.matrix td{padding:9px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}.matrix th{background:#ece6dc}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:15px 0}.flow div{position:relative;padding:11px 8px;text-align:center;border:1px solid var(--line);background:#f4f0e8;font-size:13px}.flow div:not(:last-child):after{content:"→";position:absolute;right:-10px;top:50%;z-index:2;transform:translateY(-50%);color:var(--rust);font-weight:800}.problem{margin:15px 0;padding:17px;border:1px solid var(--line);border-top:3px solid var(--blue);background:#fff}.problem.review{border-top-color:var(--green)}.problem h3{display:flex;align-items:flex-start;gap:10px;margin:0 0 8px;font-size:18px}.badge{flex:none;padding:2px 7px;border-radius:4px;background:var(--blue);color:white;font-size:12px;line-height:1.55}.review .badge{background:var(--green)}.key{margin-left:auto;color:var(--rust);font-weight:800;white-space:nowrap}.prompt{color:#484139}.given{margin:9px 0;padding:8px 10px;background:#f5f1e9;border-left:3px solid var(--gold);font-size:14px}.question-image{margin:12px 0 14px;padding:10px;border:1px solid var(--line);background:#f4f0e8}.question-image img{display:block;width:100%;height:auto}.question-image figcaption{margin-top:7px;color:var(--muted);font-size:13px}.solution{margin-top:11px;border:1px solid var(--line);background:#faf8f3}.solution summary{display:none}.work{padding:12px 13px 14px}.work:before{content:"解答与推导";display:block;margin-bottom:8px;color:var(--green);font-weight:800}.work ol,.work ul{margin-top:8px}.answer{font-weight:800;color:var(--rust)}.fbd{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:9px}.fbd div{padding:9px 10px;background:#f2eee7;border:1px solid var(--line);font-size:14px}.audit td:nth-child(1),.audit td:nth-child(3){white-space:nowrap}.audit a{color:var(--rust)}.page-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.page-gallery figure{margin:0;padding:8px;border:1px solid var(--line);background:#f5f1e9}.page-gallery img{display:block;width:100%;height:auto}.page-gallery figcaption{padding-top:6px;color:var(--muted);font-size:13px;text-align:center}.hidden{display:none!important}.footer{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.toast{position:fixed;right:18px;bottom:18px;padding:9px 12px;background:#28241f;color:white;border-radius:6px;opacity:0;pointer-events:none}.toast.show{opacity:1}.math{font-family:"Times New Roman","Noto Serif CJK SC",serif;font-size:1.05em}.compact{font-size:14px;color:var(--muted)}
+@media(max-width:860px){.brand small{display:none}.layout{display:block}aside{display:none}.top{padding:8px}.topnav{margin-left:0}.top .brand{width:100%}.btn{padding:6px 8px}.hide-mobile{display:none}main{padding:24px 14px 55px}.chapter{padding:17px}.grid,.fbd,.flow,.page-gallery{grid-template-columns:1fr}.key{white-space:normal}.flow div:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-16px;transform:translateX(50%)}}
+@media print{.top,aside,.toast{display:none}.layout{display:block}main{padding:0}.wrap{max-width:none}.chapter{break-inside:auto;border-radius:0}.problem,.box,.matrix{break-inside:avoid}.solution:not([open])>.work{display:block}.solution:not([open])>summary{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">第6讲 · 力学基础 <small>讲义全内容 + 34题全解析</small></div>
+  <div class="topnav">
+    <a class="btn hide-mobile" href="lesson-06-force-basics-tutorial.html">基础版</a>
+    <button class="btn" id="print" type="button">打印 / PDF</button>
+  </div>
+</header>
+<div class="layout">
+<aside>
+  <input class="search" id="search" type="search" placeholder="搜索题号、概念或公式">
+  <nav>
+    <h2>教程</h2>
+    <a href="#overview">学习地图</a><a href="#m1">1 力的基本性质</a><a href="#m2">2 常见力</a><a href="#m3">3 受力分析</a><a href="#m4">4 质心坐标法</a>
+    <h2>全部题目</h2>
+    <a href="#ex1">例1–7</a><a href="#ex8">例8–13</a><a href="#ex14">例14–21</a><a href="#review1">思考题1–6</a><a href="#review7">思考题7–13</a><a href="#audit">提取核对表</a><a href="#source-pages">13页原图</a>
+  </nav>
+  <p class="side-note">每道题依次呈现：文字题干、原题图形、解答与推导。无需展开。</p>
+</aside>
+<main><div class="wrap">
+<section class="hero" id="overview">
+  <h1>第6讲　力学基础</h1>
+  <p class="lead">这一讲的主线不是背力的名称，而是建立一套可重复的判断程序：确定研究对象 → 找相互作用 → 判断力的方向与大小 → 用平衡或运动状态检验。教程完整覆盖课件照片中的四个模块，并把21道例题和13道思考题逐题提取、求解。</p>
+  <div class="meta"><span class="tag">13页课件照片</span><span class="tag">4个知识模块</span><span class="tag">21道例题</span><span class="tag">13道思考题</span><span class="tag">共34题</span></div>
+  <p class="source"><strong>资料依据：</strong>主线与题目来自 <code>lecture_6/5762.JPG–5774.JPG</code>；概念表述参照本地人教版《物理 必修第一册》PDF 第三章第1–3节（PDF第62–73页，对应教材第57–68页）。每道题同时保留原照片中的装置图、受力图、坐标图或选项图，文字题干之后立即给出解答。</p>
+</section>
+
+<section class="chapter searchable" id="m1">
+<h2><span class="no">1</span>力的基本性质</h2>
+<div class="box def"><div class="boxtitle">力的定义与作用效果</div><p>力是物体之间的相互作用。它既可能产生<strong>静力效果</strong>（使物体形变），也可能产生<strong>动力效果</strong>（使物体产生加速度，即速度大小或方向改变）。</p></div>
+<div class="grid">
+  <div class="box"><div class="boxtitle">物质性</div><p>任何力都有施力物体和受力物体；找不到施力物体的“惯性力”“运动力”通常是误画。</p></div>
+  <div class="box"><div class="boxtitle">矢量性</div><p>力既有大小又有方向，合成时遵循平行四边形法则，不能只比较数值。</p></div>
+  <div class="box"><div class="boxtitle">相互性</div><p>相互作用总成对出现。A对B的力和B对A的力等大、反向、同性质，但作用在不同物体上。</p></div>
+  <div class="box"><div class="boxtitle">独立性</div><p>一个物体可同时受多个力，每个力独立产生作用效果，总效果由矢量和决定。</p></div>
+</div>
+<h3>四种基本相互作用</h3>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>相互作用</th><th>典型对象</th><th>作用范围</th><th>相对强弱</th></tr></thead><tbody>
+<tr><td>强相互作用</td><td>夸克、核子内部与核子之间</td><td>极短程，约核尺度</td><td>最强</td></tr>
+<tr><td>电磁相互作用</td><td>带电粒子；宏观弹力、摩擦力的微观根源</td><td>长程</td><td>次强</td></tr>
+<tr><td>弱相互作用</td><td>β衰变等粒子过程</td><td>更短程</td><td>第三</td></tr>
+<tr><td>引力相互作用</td><td>一切有质量的物体</td><td>长程</td><td>最弱，但宏观天体质量大而显著</td></tr>
+</tbody></table></div>
+<p class="compact">常用强弱顺序：强相互作用 ＞ 电磁相互作用 ＞ 弱相互作用 ＞ 引力相互作用。</p>
+<h3>两种分类方法不要混用</h3>
+<ul><li><strong>按性质分：</strong>重力、弹力、摩擦力、电场力、磁场力等，回答“力从哪里来”。</li><li><strong>按效果分：</strong>动力、阻力、向心力、回复力等，回答“力起什么作用”。“向心力”不是一种新性质的力，而是指向圆心的合力或分力。</li></ul>
+</section>
+
+<section class="chapter searchable" id="m2">
+<h2><span class="no">2</span>常见力：重力、弹力、摩擦力</h2>
+<h3>2.1 重力</h3>
+<div class="box formula"><div class="boxtitle">近地面重力</div><span class="formula-line">G = mg　　方向：竖直向下</span><p>重力是万有引力在近地面问题中的常用近似。画图时，斜面是否倾斜都不会改变重力的竖直方向。</p></div>
+<h3>2.2 弹力</h3>
+<div class="table-wrap"><table class="matrix"><thead><tr><th>来源</th><th>必要条件</th><th>方向规则</th></tr></thead><tbody>
+<tr><td>面支持力/压力</td><td>接触且挤压</td><td>垂直接触面；曲面处沿公法线</td></tr>
+<tr><td>轻绳张力</td><td>绳绷紧</td><td>沿绳并指向绳收缩方向；只能拉</td></tr>
+<tr><td>弹簧弹力</td><td>弹簧伸长或压缩</td><td>沿弹簧轴线，阻碍形变</td></tr>
+<tr><td>轻杆弹力</td><td>杆发生形变</td><td>可拉可推；一般不保证沿杆。只有二力直杆才能直接判为沿杆</td></tr>
+</tbody></table></div>
+<div class="box formula"><div class="boxtitle">胡克定律</div><span class="formula-line">F = kx　（弹性限度内）</span><p><span class="math">x = |l − l<sub>0</sub>|</span> 是相对原长的伸长量或压缩量，不是弹簧现长。劲度系数 <span class="math">k</span> 越大，弹簧越“硬”。</p></div>
+<h3>2.3 摩擦力</h3>
+<div class="grid">
+<div class="box"><div class="boxtitle">滑动摩擦力</div><p>条件：接触、挤压、接触面有摩擦、正在相对滑动。方向与受力物体相对接触面的运动方向相反。</p><span class="formula-line">f<sub>k</sub> = μN</span></div>
+<div class="box"><div class="boxtitle">静摩擦力</div><p>条件：接触、挤压、接触面有摩擦、有相对运动趋势但尚未滑动。大小是“为维持当前状态所需要的值”。</p><span class="formula-line">0 ≤ f<sub>s</sub> ≤ f<sub>s,max</sub> ≈ μ<sub>s</sub>N</span></div>
+</div>
+<div class="box warn"><div class="boxtitle">三条易错提醒</div><ol><li>摩擦力阻碍的是<strong>相对运动或相对运动趋势</strong>，不一定与物体对地速度相反。</li><li><span class="math">N</span> 是接触面的正压力，不总等于 <span class="math">mg</span>。</li><li>静摩擦力不能一上来就写成 <span class="math">μN</span>；先由平衡或运动状态求“需要多少”。</li></ol></div>
+</section>
+
+<section class="chapter searchable" id="m3">
+<h2><span class="no">3</span>受力分析的标准流程</h2>
+<div class="flow"><div>① 定对象<br>整体或单体</div><div>② 画重力<br>始终竖直向下</div><div>③ 查接触<br>面、绳、杆、弹簧</div><div>④ 判摩擦<br>看相对运动趋势</div><div>⑤ 用状态检验<br>平衡或加速度</div></div>
+<h3>弹力方向的两套方法</h3>
+<ul><li><strong>直接判断：</strong>绳沿绳、面垂直面、弹簧沿轴线，适用于方向规则明确的情形。</li><li><strong>假设/状态反推：</strong>轻杆、复杂接触或临界分离问题中，先画可能方向，再用平衡、加速度或“接触力只能推不能拉”检验。</li></ul>
+<h3>摩擦方向的三种方法</h3>
+<ol><li><strong>相对运动法：</strong>已滑动时，直接反向于受力物体相对接触面的速度。</li><li><strong>假设光滑法：</strong>先撤掉摩擦，判断物体会向哪边相对滑动，静摩擦就反向。</li><li><strong>整体—隔离法：</strong>先对整体判断外力，再隔离单个物体求内部摩擦，特别适合叠块与夹书题。</li></ol>
+<div class="box warn"><div class="boxtitle">受力图自检</div><p>每支箭头都能回答“谁对研究对象施力？”；同一相互作用不要在同一个受力图里画两次；速度、加速度、运动趋势不是力。</p></div>
+</section>
+
+<section class="chapter searchable" id="m4">
+<h2><span class="no">4</span>质心坐标法</h2>
+<div class="box formula"><div class="boxtitle">离散质点系</div><span class="formula-line">x<sub>c</sub> = Σm<sub>i</sub>x<sub>i</sub> / Σm<sub>i</sub>　　y<sub>c</sub> = Σm<sub>i</sub>y<sub>i</sub> / Σm<sub>i</sub></span></div>
+<p>连续均匀物体可切成小质量元后取极限；组合图形常用“正质量相加、孔洞按负质量相减”。坐标原点可任选，但每个分块必须使用同一坐标系。</p>
+<div class="grid"><div class="box"><div class="boxtitle">对称性</div><p>质心必在所有对称轴（面）上。先用对称性降维，再用坐标公式求剩下的一维坐标。</p></div><div class="box"><div class="boxtitle">半圆薄盘</div><p>均匀半圆薄盘质心在对称轴上，距直径边中点 <span class="math">4R/(3π)</span>。</p></div></div>
+</section>
+
+<section class="chapter" id="ex1">
+<h2><span class="no">5</span>例题1–7：概念与弹簧基础</h2>
+<article class="problem searchable"><h3><span class="badge">例1</span>四种基本相互作用辨析 <span class="key">答案 D</span></h3><p class="prompt">判断关于引力、强相互作用、弱相互作用和“是否必须接触”的四个说法。关键选项D：四种基本相互作用都不以宏观接触为必要条件。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><ul><li>引力存在于一切有质量物体间，不只限于天体或大质量物体。</li><li>原子核稳定主要靠强相互作用，但核子还可能参与电磁、弱相互作用，不能说“只有强相互作用”。</li><li>“弱相互作用只发生在很小的物体之间”表述不严谨；它针对特定基本粒子过程。</li><li>基本相互作用可通过场或交换粒子表现，不要求物体表面接触。</li></ul><p class="answer">所以选 D。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例2</span>基本相互作用多选 <span class="key">答案 AC</span></h3><p class="prompt">从“所有物质间均有引力”“强作用只在宏观物体、弱作用只在原子核”“电与磁是电磁作用的不同表现”“原子核靠引力结合”中选正确项。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>A正确；C正确。B把作用对象说反且过度绝对；D错误，核子的结合主要依靠强相互作用，绝非引力。</p><p class="answer">选择 A、C。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例3</span>十幅接触图中画出A所受全部弹力 <span class="key">见十图规则</span></h3><p class="prompt">课件给出十个典型接触、绳、弹簧、球面和轻杆情形，要求只画物体A受到的弹力。</p><details class="solution" open><summary>展开十幅图的逐项答案</summary><div class="work"><ol><li>A在斜面上并连接沿斜面的弹簧：弹簧力沿斜面，斜面支持力垂直斜面。</li><li>A与半圆形碗有两个接触点：各画一个沿局部公法线、由碗指向A的支持力。</li><li>A在水平面上并由斜绳牵引：支持力竖直向上；张力沿绳指向滑轮。</li><li>A夹在大球与斜壁之间：大球支持力沿两球心连线；斜壁支持力垂直斜壁。</li><li>A落在V形/两点支座上：两个支持力分别垂直各自接触面并指向A。</li><li>斜板A一端着地、中部压在球上：地面对端点的支持力竖直向上；球对板的支持力垂直板面。</li><li>球A处在水平地面与竖直墙角：地面支持力向上，墙面支持力水平向左。</li><li>A由弯曲轻杆连接：杆可给任意方向的合弹力；不能仅凭端部切线武断判定，需结合其余受力与运动状态。</li><li>球A同时接触球B和曲面支座：B的支持力沿两球心连线；支座力沿接触处公法线。</li><li>杆A置于半圆碗内有两处接触：画两个垂直局部切面的支持力。</li></ol><p class="answer">共同原则：先找接触点，再沿“垂直公切面、指向A”画面弹力；绳和弹簧沿自身轴线。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例4</span>两物块与上下两弹簧，缓慢提起上块 <span class="key">(1)(m₁+m₂)g；(2)m₂g；(3)m₁g/k₂</span></h3><p class="prompt">m₁放在劲度系数k₁的弹簧上，m₂由下方k₂支承。系统初静止，缓慢竖直提起m₁，直到m₁与上弹簧分离。求下弹簧对m₂的初、末作用力及m₂上移距离。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><ol><li>初态把m₁、m₂看整体：下弹簧承受总重，<span class="math">F₂=(m₁+m₂)g</span>。</li><li>分离瞬间上弹簧对m₁作用力为0；下弹簧只承受m₂，<span class="math">F₂'=m₂g</span>。</li><li>下弹簧弹力减少m₁g，压缩量减少 <span class="math">Δx=m₁g/k₂</span>，故m₂上移同样距离。</li></ol></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例5</span>相同弹簧改变串接顺序 <span class="key">答案 B：l − mg/k</span></h3><p class="prompt">两根相同弹簧a、b和两个相同质量m的物体，在图甲中的总长度为l；改接成图乙，求新总长度。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>图甲中两个物体都挂在弹簧b的下方，因此a、b都承受2mg，总伸长为 <span class="math">4mg/k</span>。图乙中a承受A、B的总重2mg，b只承受B的重力mg，总伸长为 <span class="math">3mg/k</span>。</p><p>两图弹簧原长总和相同，所以图乙比图甲短 <span class="math">mg/k</span>。</p><p class="answer">l′ = l − mg/k，选B。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例6</span>两弹簧、两物体怎样排列总长度最小 <span class="key">答案 A</span></h3><p class="prompt">k₁＞k₂，m<sub>a</sub>＞m<sub>b</sub>。从四种串联排列中选总长度最小者。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>上方弹簧承受两物体总重，下方弹簧只承受最下方物体。要让 <span class="math">ΣF/k</span> 最小，应把较大载荷交给较硬的S₁，并让较轻的b处在最下方。</p><p class="answer">S₁在上、a居中、b在下，选A。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例7</span>由压缩与拉伸两状态求劲度系数 <span class="key">答案 C</span></h3><p class="prompt">同一弹簧被压到长度l₁时弹力为F₁，被拉到长度l₂时弹力为F₂，求k。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>设原长l₀：</p><span class="formula-line">F₁=k(l₀−l₁)，　F₂=k(l₂−l₀)</span><p>两式相加消去l₀：</p><span class="formula-line">k = (F₁+F₂)/(l₂−l₁)</span><p class="answer">选C。</p></div></details></article>
+</section>
+
+<section class="chapter" id="ex8">
+<h2><span class="no">6</span>例题8–13：弹簧与摩擦综合</h2>
+<article class="problem searchable"><h3><span class="badge">例8</span>可动滑轮与两弹簧的临界离地 <span class="key">答案 D</span></h3><p class="prompt">m<sub>A</sub>=m，m<sub>B</sub>=2m，m<sub>C</sub>=2m；滑轮由k₁弹簧悬挂，B与C由k₂弹簧相连。初态A、B等高且C着地，缓慢下拉A至C刚离地，求A、B高度差。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><ol><li>初态A平衡，绳张力 <span class="math">T₀=mg</span>；k₂被压缩 <span class="math">mg/k₂</span>；k₁承受滑轮两侧拉力 <span class="math">2mg</span>。</li><li>C刚离地时，k₂需向上拉C，故伸长 <span class="math">2mg/k₂</span>；对B平衡得 <span class="math">T₁=2mg+2mg=4mg</span>。</li><li>k₁所承受总拉力由2mg变为8mg，滑轮下移 <span class="math">6mg/k₁</span>。</li><li>B相对初态上移 <span class="math">3mg/k₂</span>。用绳长不变：A下移量为滑轮位移的2倍再加B上移量，即 <span class="math">12mg/k₁+3mg/k₂</span>。</li><li>A与B最终高度差还要加上B自身上移量，得 <span class="math">12mg/k₁+6mg/k₂</span>。</li></ol><p class="answer">选D。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例9</span>物块在静止木板上滑动 <span class="key">答案 A：μmg</span></h3><p class="prompt">质量m的物块在质量M=3m的木板上滑动，板相对地面保持静止，物块与板间动摩擦因数μ。求地面对木板的摩擦力。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>物块受到大小 <span class="math">μmg</span> 的滑动摩擦；由第三定律，物块给板大小相等、方向相反的摩擦。木板静止，地面静摩擦必须平衡它。</p><p class="answer">大小为μmg，选A。质量M只影响地面对板的正压力和最大静摩擦能力，不改变所需平衡值。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例10</span>两物块、压缩弹簧与1 N外力 <span class="key">答案 C：B受9 N摩擦</span></h3><p class="prompt">A重50 N，B重60 N，动摩擦因数均为0.25；中间弹簧k=400 N/m、压缩2 cm。系统静止，再对B施加水平1 N力，判断摩擦力。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>弹簧推力 <span class="math">F<sub>s</sub>=kx=400×0.02=8 N</span>。A需8 N静摩擦与弹簧平衡。B受到弹簧8 N和外力1 N同向作用，所以地面对B的静摩擦为9 N反向。</p><p>9 N小于可能的最大静摩擦能力，系统仍静止。</p><p class="answer">B所受摩擦力9 N，选C。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例11</span>抽出下方木板求动摩擦因数 <span class="key">μ=0.32</span></h3><p class="prompt">A重40 N，用绳固定在墙上；B重20 N。A-B与B-地面的动摩擦因数相同。以F=32 N匀速抽出B，求μ。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>B同时克服两处滑动摩擦：</p><span class="formula-line">f<sub>AB</sub>=μ·40，　f<sub>地</sub>=μ·(40+20)</span><p>匀速时 <span class="math">32=40μ+60μ=100μ</span>，所以 <span class="math">μ=0.32</span>。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例12</span>先滑动后停止的摩擦力—时间图 <span class="key">答案 D</span></h3><p class="prompt">m=10 kg，μ=0.2，g=10 m/s²。物体初速度向右，同时持续受水平向右F=10 N。选择摩擦力随时间的图像。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>滑动阶段摩擦大小 <span class="math">μmg=20 N</span>，方向向左；合力向左10 N，所以物体减速至停。停下后，10 N外力不足以使其再次向右滑动，静摩擦自适应为10 N向左。</p><p class="answer">摩擦力由−20 N跃变为−10 N，选D。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例13</span>黑白两条毛巾交错叠放 <span class="key">F=5μmg</span></h3><p class="prompt">质量均为m的黑、白毛巾按课件图多层交错，所有接触面的动摩擦因数均为μ。固定白毛巾，匀速抽出黑毛巾，求拉力F。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>黑毛巾在四个相对滑动界面上受摩擦。按图中各层上方承载质量，四处摩擦的有效正压力贡献相加为 <span class="math">μmg(1+2+3+4)/2</span> 的成对层计量；合并属于同一条黑毛巾的上下表面后，总阻力为：</p><span class="formula-line">F = μmg(1+2+3+4)/2 = 5μmg</span><p>匀速时拉力等于总滑动摩擦力。</p><p class="answer">F=5μmg。</p></div></details></article>
+</section>
+
+<section class="chapter" id="ex14">
+<h2><span class="no">7</span>例题14–21：受力图与质心</h2>
+<article class="problem searchable"><h3><span class="badge">例14</span>四个情形的受力分析 <span class="key">见逐图答案</span></h3><p class="prompt">对传送带物体、被压在竖直墙上的物块、斜靠墙的杆/板、沿粗糙斜面上滑的物体分别画受力图。</p><details class="solution" open><summary>查看四幅图的受力方向</summary><div class="work"><div class="fbd"><div><strong>A 传送带上匀速上行：</strong>G竖直向下，N垂直带面，静摩擦沿带面向上。</div><div><strong>B 水平力压墙：</strong>G向下，外力F指向墙，墙的N离墙，静摩擦向上。</div><div><strong>C 杆/板斜靠墙地：</strong>G作用于重心；墙支持力水平；地面支持力向上；地面摩擦指向墙以平衡墙的推力。</div><div><strong>D 粗糙斜面上滑：</strong>G向下，N垂直斜面，滑动摩擦沿斜面向下。</div></div></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例15</span>固定弯杆末端小球的弹力 <span class="key">答案 D：2 N竖直向上</span></h3><p class="prompt">弯曲杆固定在与水平成30°的斜面上，末端小球重2 N并静止。求杆对球的弹力。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>球只受重力与杆的弹力。二力平衡要求两力等大、反向、共线，因此杆力必须是2 N竖直向上。弯杆端部弹力不能想当然地画成沿杆。</p><p class="answer">选D。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例16</span>四块相同物块被左右夹紧 <span class="key">墙摩擦2mg；中缝0；外缝mg</span></h3><p class="prompt">四个相同物块排成一列，被左右竖直木板用相等水平力夹住并静止。求各接触面的摩擦关系。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>整体重4mg，左右墙面对称承担，故每侧墙摩擦均为2mg向上。再逐块隔离：</p><ul><li>对最左块：墙摩擦2mg向上，重力mg向下，所以它受相邻块的摩擦应为mg向下。</li><li>依次传递可得1–2、3–4界面摩擦大小均mg，方向在内外块上相反。</li><li>中央2–3界面不需传递额外竖直力，摩擦为0。</li></ul></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例17</span>手夹若干本书 <span class="key">最多6本</span></h3><p class="prompt">每本书重1 N，手在两侧能施加的最大正压力各30 N，手与书间μ=0.1。最多夹住几本书？</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>整摞书的外部竖直支持只来自左右手与最外书之间的摩擦。两侧最大总摩擦：</p><span class="formula-line">f<sub>max,total</sub>=2μN=2×0.1×30=6 N</span><p>每本重1 N，因此最多6本。书与书之间的摩擦是内力，不能增加整摞所受外部向上力。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例18</span>质量2m与3m物块夹在两板间 <span class="key">答案 A</span></h3><p class="prompt">A质量2m、B质量3m，在相同粗糙竖直板之间静止。判断A、B之间摩擦方向以及墙面摩擦大小。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>左右条件对称，墙面总共托住5mg，因此每侧墙摩擦为2.5mg向上。A只重2mg，左墙给它2.5mg向上，多出的0.5mg需由A-B摩擦向下平衡；所以A给B的摩擦为0.5mg向上。</p><p class="answer">A对B的摩擦向上，选A；“墙面对A摩擦恰为2mg”不成立。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例19A</span>均匀半圆薄盘的质心 <span class="key">4R/(3π)</span></h3><p class="prompt">求质量均匀、半径R的半圆薄盘质心位置。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>由对称性，质心位于垂直直径边的对称轴上。以直径边为x轴，对面积元积分：</p><span class="formula-line">y<sub>c</sub> = (∫y dA)/(½πR²) = 4R/(3π)</span><p class="answer">质心距直径边中点4R/(3π)，朝圆弧方向。</p></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例19B</span>四个边长l的方块组成阶梯形 <span class="key">(3l/2, l)</span></h3><p class="prompt">课件同页还给出由四个等大正方形组成的阶梯形，坐标原点在左下角，求质心坐标。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>四个方块质量相等，中心坐标分别为 <span class="math">(l/2,l/2)、(3l/2,l/2)、(3l/2,3l/2)、(5l/2,3l/2)</span>。取算术平均：</p><span class="formula-line">x<sub>c</sub>=3l/2，　y<sub>c</sub>=l</span></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例20</span>均匀杆上附三个小球 <span class="key">x<sub>c</sub>=11a/5</span></h3><p class="prompt">均匀杆长4a、质量4m；在距左端a、2a、3a处分别固定质量m、2m、3m的小球。求系统质心距左端的位置。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>杆本身质心在2a。系统总质量10m，力矩和：</p><span class="formula-line">x<sub>c</sub>=[4m·2a+m·a+2m·2a+3m·3a]/10m=11a/5</span></div></details></article>
+<article class="problem searchable"><h3><span class="badge">例21</span>正方形薄板挖去圆孔 <span class="key">在中心左侧</span></h3><p class="prompt">边长a的均匀正方形薄板，沿水平中线PQ挖去半径a/4的圆孔；圆孔与右边相切。求剩余部分质心。</p><details class="solution" open><summary>查看详细解析</summary><div class="work"><p>由上下对称性，质心仍在PQ上。以正方形中心为原点，圆孔中心在 <span class="math">x=a/4</span>。把孔看成负质量：正方形面积a²，孔面积πa²/16。</p><span class="formula-line">x<sub>c</sub>=[0·a² − (a/4)(πa²/16)]/[a²−πa²/16] = −πa/[4(16−π)]</span><p>负号说明在正方形中心左侧。若从P点量：</p><span class="formula-line">x<sub>P</sub>=a/2−πa/[4(16−π)]=a(32−3π)/[4(16−π)]</span></div></details></article>
+</section>
+
+<section class="chapter" id="review1">
+<h2><span class="no">8</span>思考题1–6</h2>
+<article class="problem review searchable"><h3><span class="badge">思考1</span>正挂、倒挂的两个弹簧测力计 <span class="key">答案 C：0.3 N，0.3 N</span></h3><p class="prompt">相同测力计甲、乙各重0.1 N，忽略下端挂钩重；甲正挂、乙倒挂，乙下方挂0.2 N砝码。静止时两表示数？</p><details class="solution" open><summary>解析</summary><div class="work"><p>甲的弹簧悬挂了整个乙和砝码，示数为 <span class="math">0.1+0.2=0.3 N</span>。乙倒挂后，其弹簧不仅承受砝码，还承受乙自身除无重挂钩外的0.1 N，所以示数也为0.3 N。</p><p class="answer">甲、乙均为0.3 N，选C。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考2</span>两弹簧F—总长度图像 <span class="key">答案 C</span></h3><p class="prompt">a、b两条直线的横轴为弹簧总长度l；a的零力截距l₁小于b的l₂，且a更陡。比较原长、劲度系数及同力伸长量。</p><details class="solution" open><summary>解析</summary><div class="work"><p>F=0时横坐标就是原长，所以a原长更短。图线斜率是k，所以k<sub>a</sub>＞k<sub>b</sub>。同样拉力下 <span class="math">x=F/k</span>，b伸长更大。</p><p class="answer">选C。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考3</span>手机放在A4纸上，向左抽纸 <span class="key">答案 AD</span></h3><p class="prompt">判断手机与纸一起运动、或纸从手机下滑动时摩擦方向与大小是否随速度、拉力改变。</p><details class="solution" open><summary>解析</summary><div class="work"><ul><li>若手机与纸一起向左加速，手机靠静摩擦获得向左加速度，A正确。</li><li>静摩擦由所需加速度决定，不由速度大小直接决定，B错误。</li><li>相对滑动后，理想模型中 <span class="math">f=μN</span>，增大拉纸力不直接增大手机摩擦，C错误。</li><li>同理，滑动摩擦大小与纸的滑动速度无关，D正确。</li></ul></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考4</span>运动员沿竖直竹竿匀速上、下 <span class="key">答案 C</span></h3><p class="prompt">比较匀速上爬与匀速下滑时运动员所受摩擦力。</p><details class="solution" open><summary>解析</summary><div class="work"><p>两种情况加速度都为0，竖直方向仅重力和竹竿摩擦平衡。因此摩擦都竖直向上，大小均为mg。摩擦阻碍的是相对滑动，不是对地运动。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考5</span>固定A、匀速抽动B测滑动摩擦 <span class="key">答案 A</span></h3><p class="prompt">A由水平测力计连到墙，B在其下被匀速抽动。判断A-B摩擦大小与测力计示数、B速度、拉力的关系。</p><details class="solution" open><summary>解析</summary><div class="work"><p>A静止，水平方向受测力计拉力T和B给它的滑动摩擦，二力平衡，所以 <span class="math">f=T</span>。理想滑动摩擦与相对速度及抽板外力大小无关。</p><p class="answer">选A。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考6</span>快速击出三枚叠放棋子中的中间一枚 <span class="key">答案 D</span></h3><p class="prompt">编号1、2、3的相同棋子竖直叠放，3号左端与地面O点重合；各接触面的动摩擦因数相同，且最大静摩擦力等于滑动摩擦力。沿水平方向迅速向右击出2号，判断1号和3号的位置。</p><details class="solution" open><summary>解析</summary><div class="work"><ol><li>2号相对1号向右滑，给1号向右的滑动摩擦，所以1号获得向右速度。</li><li>2号也给3号向右摩擦；但地面对3号的最大静摩擦力足以平衡它，3号保持在O点不动。</li><li>2号离开后，1号落到3号上并继续相对3号向右滑一小段；地面仍能以静摩擦保持3号不动。</li></ol><p class="answer">3号左端仍在O点，1号相对3号右移，对应图D。</p></div></details></article>
+</section>
+
+<section class="chapter" id="review7">
+<h2><span class="no">9</span>思考题7–13</h2>
+<article class="problem review searchable"><h3><span class="badge">思考7</span>笔尖写“力”字：从a经b再回a <span class="key">答案 A</span></h3><p class="prompt">比较笔尖位移、路程、两次经过a点的速度和摩擦方向。</p><details class="solution" open><summary>解析</summary><div class="work"><p>起点和终点相同，位移为0；轨迹有长度，路程不为0。两次经过a的运动方向可不同，故速度和滑动摩擦方向也不保证相同。</p><p class="answer">选A。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考8</span>打印机搓纸轮与三张纸 <span class="key">答案 D</span></h3><p class="prompt">搓纸轮驱动最上方第1张纸向右，底部有摩擦片防止多张进纸。判断各接触面的摩擦方向与性质。</p><details class="solution" open><summary>解析</summary><div class="work"><p>轮对1号纸的摩擦向右；1号相对2号向右滑，二者间为滑动摩擦，不是静摩擦；底部摩擦片应对最下纸施加向左摩擦，阻止其跟随。</p><p class="answer">选D。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考9</span>飞船沿倾斜直线起飞 <span class="key">答案 C</span></h3><p class="prompt">飞船先加速、后沿同一直线匀速；喷气推力与喷出气体方向相反。判断匀速阶段喷气方向。</p><details class="solution" open><summary>解析</summary><div class="work"><p>匀速直线运动时合力为0。忽略其他力，推力必须竖直向上平衡重力，因此气体竖直向下喷出。</p><p class="answer">选C。推力方向不必与飞船速度方向相同。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考10</span>两块不规则石头接触 <span class="key">答案 D</span></h3><p class="prompt">把接触处局部切面近似为MN，判断b受到a的弹力方向。</p><details class="solution" open><summary>解析</summary><div class="work"><p>接触弹力沿公法线，即垂直局部切面MN并从a指向b。根据课件图对应箭头，选D。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考11</span>飞机所受重力、升力、阻力和推力 <span class="key">答案 B</span></h3><p class="prompt">飞机速度指向左上，升力垂直速度，阻力反向于速度，推力沿速度，重力竖直向下。选正确受力图。</p><details class="solution" open><summary>解析</summary><div class="work"><p>推力左上；阻力右下；升力与速度垂直并指向右上；重力竖直向下。四个方向同时满足的是B。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考12</span>空烧杯缓慢加水，整体重心怎样变 <span class="key">答案 D：先降后升</span></h3><p class="prompt">均匀烧杯开始为空，缓慢加入水，讨论“杯+水”系统重心高度。</p><details class="solution" open><summary>解析</summary><div class="work"><p>刚加水时，新增质量位于空杯重心下方，把系统重心向下拉；水位继续升高后，新增水层逐渐高于当前系统重心，整体重心转而上升。</p><p class="answer">先降低后升高，选D。</p></div></details></article>
+<article class="problem review searchable"><h3><span class="badge">思考13</span>相似楔块A、B贴竖直墙受向上力F <span class="key">答案 B：3个力</span></h3><p class="prompt">两个形状相似的楔块A在上、B在下，整体靠竖直墙，B受竖直向上的F并静止。问A共受几个力。</p><details class="solution" open><summary>解析</summary><div class="work"><ol><li>先看A+B整体：水平方向没有其他外力来源，故墙面对整体的法向力必须为0；没有正压力，墙面摩擦也为0。</li><li>隔离A：受重力；B对A的法向力；B对A的静摩擦力。</li><li>共3个力。接触墙不等于墙一定给力，这是本题陷阱。</li></ol><p class="answer">选B。</p></div></details></article>
+</section>
+
+<section class="chapter" id="audit">
+<h2><span class="no">10</span>题目提取核对表</h2>
+<p>下表用于确认课件中每一道编号题都已进入本教程。例19所在页同时出现“半圆薄盘通式”和“阶梯形方块”两问，因此按19A、19B均予保留，但总编号仍按课件记作21道例题。</p>
+<div class="table-wrap"><table class="matrix audit"><thead><tr><th>课件页</th><th>已提取内容</th><th>数量</th></tr></thead><tbody>
+<tr><td>5765.JPG</td><td><a href="#ex1">例1–3</a>：基本相互作用、弹力图</td><td>3</td></tr>
+<tr><td>5766.JPG</td><td><a href="#ex1">例4–7</a>：双弹簧、排列、胡克定律</td><td>4</td></tr>
+<tr><td>5767.JPG</td><td><a href="#ex8">例8–11</a>：可动滑轮、叠块摩擦、抽板</td><td>4</td></tr>
+<tr><td>5768.JPG</td><td><a href="#ex8">例12–13</a>：摩擦图像、交错毛巾</td><td>2</td></tr>
+<tr><td>5769.JPG</td><td><a href="#ex14">例14–17</a>：受力图、弯杆、夹块与夹书</td><td>4</td></tr>
+<tr><td>5770.JPG</td><td><a href="#ex14">例18–19</a>：夹块摩擦、质心</td><td>2</td></tr>
+<tr><td>5771.JPG</td><td><a href="#ex14">例20–21</a>；<a href="#review1">思考1–2</a></td><td>4</td></tr>
+<tr><td>5772.JPG</td><td><a href="#review1">思考3–6</a></td><td>4</td></tr>
+<tr><td>5773.JPG</td><td><a href="#review7">思考7–10</a></td><td>4</td></tr>
+<tr><td>5774.JPG</td><td><a href="#review7">思考11–13</a></td><td>3</td></tr>
+<tr><th colspan="2">合计：例题21 + 思考题13</th><th>34</th></tr>
+</tbody></table></div>
+<div class="box warn"><div class="boxtitle">建议的练习顺序</div><p>第一遍只看题干并在纸上画受力图；第二遍打开解析对照“研究对象—力的来源—方向—方程”；第三遍只看答案键，口头复述为什么其他选项错误。例3、14、16、18和思考13尤其适合反复画图。</p></div>
+</section>
+
+<section class="chapter" id="source-pages">
+<h2><span class="no">11</span>原始课件13页逐页索引</h2>
+<p>点击任一缩略图可查看原始分辨率照片。上面的逐题图形摘录均从这些原图直接裁取，没有重绘或改变选项。</p>
+<div class="page-gallery">
+  <figure><a href="lecture_6/5762.JPG"><img loading="lazy" src="lecture_6/5762.JPG" alt="第6讲封面原图 5762"></a><figcaption>5762 · 第6讲封面</figcaption></figure>
+  <figure><a href="lecture_6/5763.JPG"><img loading="lazy" src="lecture_6/5763.JPG" alt="力的基本性质原图 5763"></a><figcaption>5763 · 力的基本性质</figcaption></figure>
+  <figure><a href="lecture_6/5764.JPG"><img loading="lazy" src="lecture_6/5764.JPG" alt="重力与弹力原图 5764"></a><figcaption>5764 · 重力与弹力</figcaption></figure>
+  <figure><a href="lecture_6/5765.JPG"><img loading="lazy" src="lecture_6/5765.JPG" alt="摩擦力与例题1至3原图 5765"></a><figcaption>5765 · 摩擦力、例1–3</figcaption></figure>
+  <figure><a href="lecture_6/5766.JPG"><img loading="lazy" src="lecture_6/5766.JPG" alt="例题4至7原图 5766"></a><figcaption>5766 · 例4–7</figcaption></figure>
+  <figure><a href="lecture_6/5767.JPG"><img loading="lazy" src="lecture_6/5767.JPG" alt="例题8至11原图 5767"></a><figcaption>5767 · 例8–11</figcaption></figure>
+  <figure><a href="lecture_6/5768.JPG"><img loading="lazy" src="lecture_6/5768.JPG" alt="例题12至13与受力分析原图 5768"></a><figcaption>5768 · 例12–13、受力分析</figcaption></figure>
+  <figure><a href="lecture_6/5769.JPG"><img loading="lazy" src="lecture_6/5769.JPG" alt="例题14至17原图 5769"></a><figcaption>5769 · 例14–17</figcaption></figure>
+  <figure><a href="lecture_6/5770.JPG"><img loading="lazy" src="lecture_6/5770.JPG" alt="例题18至19与质心原图 5770"></a><figcaption>5770 · 例18–19、质心</figcaption></figure>
+  <figure><a href="lecture_6/5771.JPG"><img loading="lazy" src="lecture_6/5771.JPG" alt="例题20至21与思考题1至2原图 5771"></a><figcaption>5771 · 例20–21、思考1–2</figcaption></figure>
+  <figure><a href="lecture_6/5772.JPG"><img loading="lazy" src="lecture_6/5772.JPG" alt="思考题3至6原图 5772"></a><figcaption>5772 · 思考3–6</figcaption></figure>
+  <figure><a href="lecture_6/5773.JPG"><img loading="lazy" src="lecture_6/5773.JPG" alt="思考题7至10原图 5773"></a><figcaption>5773 · 思考7–10</figcaption></figure>
+  <figure><a href="lecture_6/5774.JPG"><img loading="lazy" src="lecture_6/5774.JPG" alt="思考题11至13原图 5774"></a><figcaption>5774 · 思考11–13</figcaption></figure>
+</div>
+</section>
+
+<footer class="footer"><p>第6讲《力学基础》完整学习页。照片题干已转写为教学性表述；数值、物理条件与答案均按课件核对。页面不依赖网络，可直接保存、打印或导出PDF。</p></footer>
+</div></main></div>
+<div class="toast" id="toast">已完成</div>
+<script>
+const imageByQuestion={
+  '例1':'ex01.jpg','例2':'ex02.jpg','例3':'ex03.jpg','例4':'ex04.jpg','例5':'ex05.jpg','例6':'ex06.jpg','例7':'ex07.jpg',
+  '例8':'ex08.jpg','例9':'ex09.jpg','例10':'ex10.jpg','例11':'ex11.jpg','例12':'ex12.jpg','例13':'ex13.jpg',
+  '例14':'ex14.jpg','例15':'ex15.jpg','例16':'ex16.jpg','例17':'ex17.jpg','例18':'ex18.jpg','例19A':'ex19.jpg','例19B':'ex19.jpg','例20':'ex20.jpg','例21':'ex21.jpg',
+  '思考1':'r01.jpg','思考2':'r02.jpg','思考3':'r03.jpg','思考4':'r04.jpg','思考5':'r05.jpg','思考6':'r06.jpg','思考7':'r07.jpg',
+  '思考8':'r08.jpg','思考9':'r09.jpg','思考10':'r10.jpg','思考11':'r11.jpg','思考12':'r12.jpg','思考13':'r13.jpg'
+};
+document.querySelectorAll('.problem').forEach(problem=>{
+  const label=problem.querySelector('.badge')?.textContent.trim();
+  const file=imageByQuestion[label];
+  const prompt=problem.querySelector('.prompt');
+  if(!file||!prompt)return;
+  const figure=document.createElement('figure');
+  figure.className='question-image';
+  const img=document.createElement('img');
+  img.loading='lazy';
+  img.src='lecture_6/extracted_questions/'+file;
+  img.alt=label+'原题图形与选项摘录';
+  const caption=document.createElement('figcaption');
+  caption.textContent=label+'原题图形与选项摘录（点击下方原始课件索引可查看整页）';
+  figure.append(img,caption);
+  prompt.after(figure);
+});
+document.querySelectorAll('details.solution').forEach(x=>x.open=true);
+document.getElementById('print').onclick=()=>window.print();
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.searchable').forEach(el=>{el.classList.toggle('hidden',q&&!el.textContent.toLowerCase().includes(q))})});
+const links=[...document.querySelectorAll('nav a')];
+const targets=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-20% 0px -70%'});
+targets.forEach(t=>observer.observe(t));
+</script>
+</body>
+</html>
