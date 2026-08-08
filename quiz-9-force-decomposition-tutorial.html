@@ -169,13 +169,40 @@
 <b>方法一：三力平衡的力三角形（推荐）</b>
 <p>B 点只受 T、S、G 三个力且保持平衡，因此把三个力按首尾相接排列，必能组成闭合的力三角形。</p><p>三力方向分别平行于几何三角形 ABC 的三条边：</p><div class="formula" data-copy>T ∥ AB<br>S ∥ BC<br>G ∥ AC</div><p>所以闭合的力三角形与几何三角形 ABC 相似，对应边成比例：</p><div class="formula" data-copy>T/AB = S/BC = G/AC</div><p>直接取后两项：</p><div class="formula" data-copy>S/BC = G/AC<br>S = G·BC/AC</div><p>运动过程中，重力 G、杆长 BC 和固定距离 AC 全都不变，因此 S 恒定。</p><div class="conclusion"><strong>力三角形结论：</strong>S=G·BC/AC，杆 BC 所受力大小不变，选 A。</div><p class="note"><strong>一句话记忆：</strong>物体受三个共点力平衡，并且三力方向分别平行于某个三角形的三边，就可以直接利用力三角形与几何三角形相似。</p></div>
           <div class="step">
-<b>方法二：建立坐标作分解验证</b>
-<p>设 AC=h、BC=l、AB=s，B 相对 C 的水平坐标为 x、竖直坐标为 y。则 BA 方向的水平、竖直投影分别为 −x 与 h−y；CB 方向投影分别为 x 与 y。</p></div>
+<b>方法二：对 C 点取力矩，再用水平平衡求杆力</b>
+<p>设 AC=h、BC=l、AB=s，并令 B 点到竖直线 AC 的水平距离为 x。对 C 点取力矩时，杆力 S 的作用线就是直线 BC，经过 C 点，所以它对 C 点的力矩为 0。</p>
+<p>重力 G 的作用线竖直向下，力臂为 x，因此重力矩大小为 Gx。</p>
+<p>设 C 点到张力 T 的作用线 AB 的垂直距离为 d。由三角形 ABC 的面积可得：</p>
+<div class="formula" data-copy>三角形 ABC 的面积 = (1/2)·s·d = (1/2)·h·x<br>d = h·x/s</div>
+<p>张力矩与重力矩方向相反。平衡时二者大小相等：</p>
+<div class="formula" data-copy>T·h·x/s = Gx<br>T = Gs/h　（x ≠ 0）</div>
+<p>取矩先求出了张力 T；还需利用水平方向平衡求杆力 S：</p>
+<div class="formula" data-copy>S·x/l = T·x/s<br>S = T·l/s<br>S = (Gs/h)·(l/s) = G·l/h</div>
+<p class="note"><strong>注意：</strong>力矩法并未单独直接求出 S。它先利用“杆力作用线经过 C”消去 S，求出 T；随后再由水平方向的力平衡得到 S。</p>
+</div>
           <div class="step">
-<b>列 B 点的水平平衡</b><div class="formula" data-copy>−T·x/s + S·x/l = 0<br>S = T·l/s</div><p>只要 B 未与 AC 共线，x≠0，便可约去 x。</p></div>
+<b>方法三：完全用水平、竖直方向的力平衡</b>
+<p>设 AC=h、BC=l、AB=s。以 C 为原点建立坐标系：</p>
+<div class="formula" data-copy>C=(0,0)，A=(0,h)，B=(x,y)</div>
+<p>B 点受到张力 T、杆力 S 和重力 G。张力沿 BA，杆力沿 CB，各力的水平、竖直分量写成有序对：</p>
+<div class="formula" data-copy>T：T(−x/s，(h−y)/s)<br>S：S(x/l，y/l)<br>G：(0，−G)</div>
+<p><strong>水平方向平衡：</strong></p>
+<div class="formula" data-copy>−T·x/s + S·x/l = 0<br>S = T·l/s　（非共线状态 x ≠ 0）</div>
+<p><strong>竖直方向平衡：</strong></p>
+<div class="formula" data-copy>T(h−y)/s + S·y/l = G<br>T(h−y)/s + (Tl/s)·y/l = G<br>T(h−y)/s + Ty/s = G<br>Th/s = G<br>T = Gs/h</div>
+<p>再代回水平方向得到的关系：</p>
+<div class="formula" data-copy>S = T·l/s<br>S = (Gs/h)·(l/s)<br>S = G·l/h</div>
+<p>位置变量 x、y 最终全部消去。由于 G、l=BC、h=AC 都不变，所以 S 保持不变。</p>
+</div>
           <div class="step">
-<b>列竖直平衡并消元</b><div class="formula" data-copy>T(h−y)/s + S·y/l = G<br>代入 S=T·l/s：T(h−y)/s + Ty/s = G<br>Th/s = G</div><p>所以 T/s=G/h，再代回 S=T·l/s：</p><div class="formula" data-copy>S = G·l/h</div></div>
-          <div class="conclusion"><strong>结论：</strong>G、l、h 都不变，所以杆 BC 所受轴向力大小恒定，选 A。运动中 T 与 AB 都会变化，但比值 T/AB=G/AC 不变。</div>
+<b>第 5、6 题的共同结构</b>
+<div class="formula" data-copy>杆力 = 重力 × 杆长 / 固定竖直距离</div>
+<p>第 5 题中，杆长为 BC，固定竖直距离为 AC；第 6 题中，杆长为 OP，固定竖直距离为 OQ。</p>
+<p>力三角形相似只是把第 5 题的两个分量平衡方程压缩成：</p>
+<div class="formula" data-copy>T/AB = S/BC = G/AC</div>
+<p>因此，分量法是基础解法；力三角形相似是更短的几何写法；力矩法则先消去作用线经过转轴的杆力，再结合力平衡求出杆力大小。</p>
+</div>
+          <div class="conclusion"><strong>结论：</strong>三种方法均得到 S=G·l/h。G、l、h 都不变，所以杆 BC 所受轴向力大小恒定，选 A。</div>
         </div><figure class="diagram"><svg viewBox="0 0 500 420" role="img" aria-labelledby="q5t q5d"><title id="q5t">第5题B点三力与分量图</title><desc id="q5d">B点处张力沿BA、杆力沿CB、重力向下，并用水平竖直投影展示恒力推导。</desc><defs><marker id="q5r" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8b4032"/></marker><marker id="q5g" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#355d4a"/></marker><marker id="q5b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#3e6172"/></marker></defs><line class="geom" x1="120" y1="50" x2="120" y2="365"/><circle class="body" cx="120" cy="80" r="12"/><text x="92" y="71">A</text><circle class="body" cx="120" cy="235" r="10"/><text x="90" y="238">C</text><circle class="body" cx="340" cy="315" r="13"/><text x="353" y="320">B</text><line class="geom" x1="120" y1="235" x2="340" y2="315"/><line class="thin" x1="120" y1="80" x2="340" y2="315"/><line class="support" x1="340" y1="315" x2="235" y2="203" marker-end="url(#q5g)"/><text x="252" y="205">T（沿 BA）</text><line class="support" x1="340" y1="315" x2="440" y2="351" marker-end="url(#q5g)"/><text x="422" y="380">S（沿 CB）</text><line class="force" x1="340" y1="315" x2="340" y2="405" marker-end="url(#q5r)"/><text x="351" y="400">G</text><line class="component" x1="340" y1="315" x2="235" y2="315" marker-end="url(#q5b)"/><line class="component" x1="235" y1="315" x2="235" y2="203" marker-end="url(#q5b)"/><text x="248" y="339">T·x/s</text><text x="150" y="260">T(h−y)/s</text><line class="component" x1="340" y1="315" x2="440" y2="315" marker-end="url(#q5b)"/><line class="component" x1="440" y1="315" x2="440" y2="351" marker-end="url(#q5b)"/><text x="365" y="303">S·x/l</text><text x="445" y="343">S·y/l</text><text x="128" y="155">h</text><text x="212" y="292">l</text><text x="214" y="178">s</text></svg><figcaption>水平分量先给出 S=T·l/s；竖直分量再把位置变量 y 完全消去。</figcaption></figure></div>
       </div></details>
 
