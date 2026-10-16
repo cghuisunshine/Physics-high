@@ -1,0 +1,7 @@
+work/__pycache__/
+work/extracted/
+work/figures/
+work/previews/
+work/questions.json
+work/page.js
+.DS_Store
