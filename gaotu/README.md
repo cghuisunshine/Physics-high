@@ -2,6 +2,8 @@
 
 Open `physics_practice.html` in a browser. It includes 25 exercises, original diagrams, and step-by-step solutions. Use the hamburger menu to switch between English and Chinese. The page works offline and supports search and printing.
 
+Choose **Share** on a question to share or copy its direct link, including the selected language. Recipients land on that question with the solution collapsed. Use the hosted page when sharing across devices; local file links only work on your own computer.
+
 The five PDFs are the source worksheets. The worked solutions were derived for this workbook; they are not official source answer keys.
 
 To rebuild the standalone HTML, install Python 3 and Poppler (`pdftoppm`), then run from this folder:

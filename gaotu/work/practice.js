@@ -24,6 +24,8 @@
       options: '选项', diagram: '原题配图', show: 'Show answer', showHint: '查看分步解析',
       hide: 'Hide answer', hideHint: '收起解析', result: '参考答案', steps: '一步一步推导',
       trap: '易错提醒', copyTitle: '双击复制公式', copied: '公式已复制', copyFallback: '请选中公式并复制',
+      share: '分享题目', shareLabel: (lesson, number) => `分享第 ${lesson} 讲第 ${number} 题`,
+      linkCopied: '题目链接已复制', linkFallback: '复制此题链接：',
       progress: n => `已查看 ${n} / 25 道解析`, progressLabel: '已查看解析进度',
       studyHint: '先独立作答，再展开解析。\n公式框支持双击复制。\n单文件 · 无需联网',
       empty: '没有找到匹配的题目，试试其他关键词。',
@@ -49,6 +51,8 @@
       options: 'Answer choices', diagram: 'Original diagram', show: 'Show answer', showHint: 'Step-by-step solution',
       hide: 'Hide answer', hideHint: 'Close solution', result: 'ANSWER', steps: 'Step by step',
       trap: 'COMMON MISTAKE', copyTitle: 'Double-click to copy the formula', copied: 'Formula copied', copyFallback: 'Select the formula and copy it',
+      share: 'Share', shareLabel: (lesson, number) => `Share lesson ${lesson}, exercise ${number}`,
+      linkCopied: 'Question link copied', linkFallback: 'Copy this question link:',
       progress: n => `${n} / 25 solutions viewed`, progressLabel: 'Solutions viewed',
       studyHint: 'Try each exercise before opening its solution.\nDouble-click a formula to copy it.\nOne file · Works offline',
       empty: 'No matching exercises. Try another keyword.',
@@ -62,6 +66,8 @@
   };
   let language = 'zh';
   try { if (localStorage.getItem(languageKey) === 'en') language = 'en'; } catch (_) {}
+  const linkLanguage = new URL(window.location.href).searchParams.get('lang');
+  if (linkLanguage === 'zh' || linkLanguage === 'en') language = linkLanguage;
   let viewed = new Set();
   try {
     const saved = JSON.parse(localStorage.getItem('physics-viewed-v1') || '[]');
@@ -183,7 +189,10 @@
       const text = language === 'en' ? item.en : item;
       const card = document.getElementById(item.id);
       card.querySelector('.question-index').textContent = t.exercise(item.number);
-      card.querySelector('.question-meta > span:last-child').textContent = t.page(item.page);
+      card.querySelector('.question-meta > span:nth-child(2)').textContent = t.page(item.page);
+      const shareButton = card.querySelector('.share-question');
+      shareButton.textContent = t.share;
+      shareButton.setAttribute('aria-label', t.shareLabel(item.lesson, item.number));
       card.querySelector('h3').textContent = text.title;
       lines(card.querySelector('.question-text'), text.text, 'p');
       const options = card.querySelector('.options');
@@ -277,6 +286,57 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 2000);
   }
+  async function copyText(text) {
+    try {
+      if (navigator.clipboard) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+    } catch (_) { /* Try copying with a selection if clipboard permission is denied. */ }
+    const focused = document.activeElement;
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.append(area);
+    try {
+      area.select();
+      if (!document.execCommand('copy')) throw new Error('Copy failed');
+    } finally {
+      area.remove();
+      focused?.focus({ preventScroll: true });
+    }
+  }
+  $$('.share-question').forEach(button => button.addEventListener('click', async () => {
+    const card = button.closest('.question');
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', language);
+    url.hash = card.id;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: card.querySelector('h3').textContent, url: url.href });
+        return;
+      } catch (error) {
+        if (error.name === 'AbortError') return;
+      }
+    }
+    try {
+      await copyText(url.href);
+      toast(ui[language].linkCopied);
+    } catch (_) { window.prompt(ui[language].linkFallback, url.href); }
+  }));
+  function revealLinkedQuestion() {
+    const card = cards.find(card => '#' + card.id === window.location.hash);
+    if (!card) return;
+    $('#search').value = '';
+    filterQuestions();
+    card.closest('.section').open = true;
+    card.querySelector('.answer').open = false;
+    card.tabIndex = -1;
+    card.focus({ preventScroll: true });
+    card.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
+  window.addEventListener('hashchange', revealLinkedQuestion);
   $$('[data-copy]').forEach(element => element.addEventListener('dblclick', async () => {
     const text = element.innerText.trim();
     try {
@@ -312,4 +372,5 @@
   });
   $('#print').addEventListener('click', () => window.print());
   setLanguage(language, false);
+  revealLinkedQuestion();
 })();
